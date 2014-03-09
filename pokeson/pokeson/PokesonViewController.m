@@ -39,6 +39,10 @@
 }
 
 - (NSInteger) numberOfAttributes {
-	return 3;
+	return 10;
+}
+
+- (MultiProgressViewDisplayStyle)displayStyle {
+	return MultiProgressViewDisplayStyleLeftToRight;
 }
 @end
