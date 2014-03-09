@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MultiProgressView.h"
 
-@interface PokesonViewController : UIViewController
+@interface PokesonViewController : UIViewController<MultiProgressViewDelegate>
 
 @end

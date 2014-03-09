@@ -26,4 +26,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (CGFloat) progressOfAttributeAtIndex:(NSInteger)index {
+	return arc4random_uniform(100)/100.0;
+}
+
+- (UIColor*) colorOfAttributeAtIndex:(NSInteger)index { 
+	CGFloat hue = (float)index / (float)[self numberOfAttributes];
+	return [UIColor colorWithHue:hue
+					  saturation:0.8
+					  brightness:0.8
+						   alpha:1];
+}
+
+- (NSInteger) numberOfAttributes {
+	return 3;
+}
 @end
