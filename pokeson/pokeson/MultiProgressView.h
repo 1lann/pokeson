@@ -25,6 +25,6 @@ typedef NS_ENUM(NSInteger, MultiProgressViewDisplayStyle) {
 @interface MultiProgressView : UIView
 
 @property IBOutlet id<MultiProgressViewDelegate> delegate;
-
+- (void) updateDisplay;
 
 @end

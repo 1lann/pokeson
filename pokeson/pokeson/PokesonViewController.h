@@ -11,4 +11,7 @@
 
 @interface PokesonViewController : UIViewController<MultiProgressViewDelegate>
 
+- (IBAction)click:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet MultiProgressView *barView;
+
 @end

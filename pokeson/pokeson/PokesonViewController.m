@@ -45,4 +45,7 @@
 - (MultiProgressViewDisplayStyle)displayStyle {
 	return MultiProgressViewDisplayStyleLeftToRight;
 }
+- (IBAction)click:(UIButton *)sender {
+    [self.barView updateDisplay];
+}
 @end

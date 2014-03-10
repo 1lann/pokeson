@@ -13,6 +13,11 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // Clear area
+    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGContextFillRect(context, rect);
+    
 	NSInteger barHeigth = 10;
 	MultiProgressViewDisplayStyle style = [self.delegate displayStyle];
 	
@@ -35,5 +40,8 @@
 	}
 }
 
+- (void)updateDisplay {
+    [self setNeedsDisplay];
+}
 
 @end
