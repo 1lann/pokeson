@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Epic.xcscheme</key>
+		<key>epic.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2A96EAB118CEA02800025829</key>
+		<key>2A7E0C7818CEA1F4009B0B10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A96EAD518CEA02800025829</key>
+		<key>2A7E0C9C18CEA1F4009B0B10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

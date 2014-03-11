@@ -1,6 +1,6 @@
 //
-//  EpicTests.m
-//  EpicTests
+//  epicTests.m
+//  epicTests
 //
 //  Created by Jason Chu on 3/11/14.
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface EpicTests : XCTestCase
+@interface epicTests : XCTestCase
 
 @end
 
-@implementation EpicTests
+@implementation epicTests
 
 - (void)setUp
 {

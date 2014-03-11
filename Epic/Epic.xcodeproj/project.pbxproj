@@ -7,150 +7,150 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A96EAB618CEA02800025829 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A96EAB518CEA02800025829 /* Foundation.framework */; };
-		2A96EAB818CEA02800025829 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A96EAB718CEA02800025829 /* CoreGraphics.framework */; };
-		2A96EABA18CEA02800025829 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A96EAB918CEA02800025829 /* UIKit.framework */; };
-		2A96EAC018CEA02800025829 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A96EABE18CEA02800025829 /* InfoPlist.strings */; };
-		2A96EAC218CEA02800025829 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A96EAC118CEA02800025829 /* main.m */; };
-		2A96EAC618CEA02800025829 /* EpicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A96EAC518CEA02800025829 /* EpicAppDelegate.m */; };
-		2A96EAC918CEA02800025829 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A96EAC718CEA02800025829 /* Main_iPhone.storyboard */; };
-		2A96EACC18CEA02800025829 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A96EACA18CEA02800025829 /* Main_iPad.storyboard */; };
-		2A96EACF18CEA02800025829 /* EpicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A96EACE18CEA02800025829 /* EpicViewController.m */; };
-		2A96EAD118CEA02800025829 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A96EAD018CEA02800025829 /* Images.xcassets */; };
-		2A96EAD818CEA02800025829 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A96EAD718CEA02800025829 /* XCTest.framework */; };
-		2A96EAD918CEA02800025829 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A96EAB518CEA02800025829 /* Foundation.framework */; };
-		2A96EADA18CEA02800025829 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A96EAB918CEA02800025829 /* UIKit.framework */; };
-		2A96EAE218CEA02800025829 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A96EAE018CEA02800025829 /* InfoPlist.strings */; };
-		2A96EAE418CEA02800025829 /* EpicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A96EAE318CEA02800025829 /* EpicTests.m */; };
+		2A7E0C7D18CEA1F4009B0B10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E0C7C18CEA1F4009B0B10 /* Foundation.framework */; };
+		2A7E0C7F18CEA1F4009B0B10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E0C7E18CEA1F4009B0B10 /* CoreGraphics.framework */; };
+		2A7E0C8118CEA1F4009B0B10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E0C8018CEA1F4009B0B10 /* UIKit.framework */; };
+		2A7E0C8718CEA1F4009B0B10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E0C8518CEA1F4009B0B10 /* InfoPlist.strings */; };
+		2A7E0C8918CEA1F4009B0B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E0C8818CEA1F4009B0B10 /* main.m */; };
+		2A7E0C8D18CEA1F4009B0B10 /* EpicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E0C8C18CEA1F4009B0B10 /* EpicAppDelegate.m */; };
+		2A7E0C9018CEA1F4009B0B10 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E0C8E18CEA1F4009B0B10 /* Main_iPhone.storyboard */; };
+		2A7E0C9318CEA1F4009B0B10 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E0C9118CEA1F4009B0B10 /* Main_iPad.storyboard */; };
+		2A7E0C9618CEA1F4009B0B10 /* EpicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E0C9518CEA1F4009B0B10 /* EpicViewController.m */; };
+		2A7E0C9818CEA1F4009B0B10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E0C9718CEA1F4009B0B10 /* Images.xcassets */; };
+		2A7E0C9F18CEA1F4009B0B10 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E0C9E18CEA1F4009B0B10 /* XCTest.framework */; };
+		2A7E0CA018CEA1F4009B0B10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E0C7C18CEA1F4009B0B10 /* Foundation.framework */; };
+		2A7E0CA118CEA1F4009B0B10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E0C8018CEA1F4009B0B10 /* UIKit.framework */; };
+		2A7E0CA918CEA1F4009B0B10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E0CA718CEA1F4009B0B10 /* InfoPlist.strings */; };
+		2A7E0CAB18CEA1F4009B0B10 /* epicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E0CAA18CEA1F4009B0B10 /* epicTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A96EADB18CEA02800025829 /* PBXContainerItemProxy */ = {
+		2A7E0CA218CEA1F4009B0B10 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2A96EAAA18CEA02800025829 /* Project object */;
+			containerPortal = 2A7E0C7118CEA1F4009B0B10 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2A96EAB118CEA02800025829;
-			remoteInfo = Epic;
+			remoteGlobalIDString = 2A7E0C7818CEA1F4009B0B10;
+			remoteInfo = epic;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A96EAB218CEA02800025829 /* Epic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A96EAB518CEA02800025829 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2A96EAB718CEA02800025829 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2A96EAB918CEA02800025829 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2A96EABD18CEA02800025829 /* Epic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Epic-Info.plist"; sourceTree = "<group>"; };
-		2A96EABF18CEA02800025829 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2A96EAC118CEA02800025829 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A96EAC318CEA02800025829 /* Epic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Epic-Prefix.pch"; sourceTree = "<group>"; };
-		2A96EAC418CEA02800025829 /* EpicAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EpicAppDelegate.h; sourceTree = "<group>"; };
-		2A96EAC518CEA02800025829 /* EpicAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EpicAppDelegate.m; sourceTree = "<group>"; };
-		2A96EAC818CEA02800025829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		2A96EACB18CEA02800025829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		2A96EACD18CEA02800025829 /* EpicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EpicViewController.h; sourceTree = "<group>"; };
-		2A96EACE18CEA02800025829 /* EpicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EpicViewController.m; sourceTree = "<group>"; };
-		2A96EAD018CEA02800025829 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2A96EAD618CEA02800025829 /* EpicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A96EAD718CEA02800025829 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2A96EADF18CEA02800025829 /* EpicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpicTests-Info.plist"; sourceTree = "<group>"; };
-		2A96EAE118CEA02800025829 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2A96EAE318CEA02800025829 /* EpicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EpicTests.m; sourceTree = "<group>"; };
+		2A7E0C7918CEA1F4009B0B10 /* epic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7E0C7C18CEA1F4009B0B10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2A7E0C7E18CEA1F4009B0B10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2A7E0C8018CEA1F4009B0B10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2A7E0C8418CEA1F4009B0B10 /* epic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "epic-Info.plist"; sourceTree = "<group>"; };
+		2A7E0C8618CEA1F4009B0B10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A7E0C8818CEA1F4009B0B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A7E0C8A18CEA1F4009B0B10 /* epic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "epic-Prefix.pch"; sourceTree = "<group>"; };
+		2A7E0C8B18CEA1F4009B0B10 /* EpicAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EpicAppDelegate.h; sourceTree = "<group>"; };
+		2A7E0C8C18CEA1F4009B0B10 /* EpicAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EpicAppDelegate.m; sourceTree = "<group>"; };
+		2A7E0C8F18CEA1F4009B0B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		2A7E0C9218CEA1F4009B0B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		2A7E0C9418CEA1F4009B0B10 /* EpicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EpicViewController.h; sourceTree = "<group>"; };
+		2A7E0C9518CEA1F4009B0B10 /* EpicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EpicViewController.m; sourceTree = "<group>"; };
+		2A7E0C9718CEA1F4009B0B10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2A7E0C9D18CEA1F4009B0B10 /* epicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = epicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7E0C9E18CEA1F4009B0B10 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2A7E0CA618CEA1F4009B0B10 /* epicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "epicTests-Info.plist"; sourceTree = "<group>"; };
+		2A7E0CA818CEA1F4009B0B10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A7E0CAA18CEA1F4009B0B10 /* epicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = epicTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A96EAAF18CEA02800025829 /* Frameworks */ = {
+		2A7E0C7618CEA1F4009B0B10 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A96EAB818CEA02800025829 /* CoreGraphics.framework in Frameworks */,
-				2A96EABA18CEA02800025829 /* UIKit.framework in Frameworks */,
-				2A96EAB618CEA02800025829 /* Foundation.framework in Frameworks */,
+				2A7E0C7F18CEA1F4009B0B10 /* CoreGraphics.framework in Frameworks */,
+				2A7E0C8118CEA1F4009B0B10 /* UIKit.framework in Frameworks */,
+				2A7E0C7D18CEA1F4009B0B10 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A96EAD318CEA02800025829 /* Frameworks */ = {
+		2A7E0C9A18CEA1F4009B0B10 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A96EAD818CEA02800025829 /* XCTest.framework in Frameworks */,
-				2A96EADA18CEA02800025829 /* UIKit.framework in Frameworks */,
-				2A96EAD918CEA02800025829 /* Foundation.framework in Frameworks */,
+				2A7E0C9F18CEA1F4009B0B10 /* XCTest.framework in Frameworks */,
+				2A7E0CA118CEA1F4009B0B10 /* UIKit.framework in Frameworks */,
+				2A7E0CA018CEA1F4009B0B10 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A96EAA918CEA02800025829 = {
+		2A7E0C7018CEA1F4009B0B10 = {
 			isa = PBXGroup;
 			children = (
-				2A96EABB18CEA02800025829 /* Epic */,
-				2A96EADD18CEA02800025829 /* EpicTests */,
-				2A96EAB418CEA02800025829 /* Frameworks */,
-				2A96EAB318CEA02800025829 /* Products */,
+				2A7E0C8218CEA1F4009B0B10 /* epic */,
+				2A7E0CA418CEA1F4009B0B10 /* epicTests */,
+				2A7E0C7B18CEA1F4009B0B10 /* Frameworks */,
+				2A7E0C7A18CEA1F4009B0B10 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2A96EAB318CEA02800025829 /* Products */ = {
+		2A7E0C7A18CEA1F4009B0B10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A96EAB218CEA02800025829 /* Epic.app */,
-				2A96EAD618CEA02800025829 /* EpicTests.xctest */,
+				2A7E0C7918CEA1F4009B0B10 /* epic.app */,
+				2A7E0C9D18CEA1F4009B0B10 /* epicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A96EAB418CEA02800025829 /* Frameworks */ = {
+		2A7E0C7B18CEA1F4009B0B10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A96EAB518CEA02800025829 /* Foundation.framework */,
-				2A96EAB718CEA02800025829 /* CoreGraphics.framework */,
-				2A96EAB918CEA02800025829 /* UIKit.framework */,
-				2A96EAD718CEA02800025829 /* XCTest.framework */,
+				2A7E0C7C18CEA1F4009B0B10 /* Foundation.framework */,
+				2A7E0C7E18CEA1F4009B0B10 /* CoreGraphics.framework */,
+				2A7E0C8018CEA1F4009B0B10 /* UIKit.framework */,
+				2A7E0C9E18CEA1F4009B0B10 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2A96EABB18CEA02800025829 /* Epic */ = {
+		2A7E0C8218CEA1F4009B0B10 /* epic */ = {
 			isa = PBXGroup;
 			children = (
-				2A96EAC418CEA02800025829 /* EpicAppDelegate.h */,
-				2A96EAC518CEA02800025829 /* EpicAppDelegate.m */,
-				2A96EAC718CEA02800025829 /* Main_iPhone.storyboard */,
-				2A96EACA18CEA02800025829 /* Main_iPad.storyboard */,
-				2A96EACD18CEA02800025829 /* EpicViewController.h */,
-				2A96EACE18CEA02800025829 /* EpicViewController.m */,
-				2A96EAD018CEA02800025829 /* Images.xcassets */,
-				2A96EABC18CEA02800025829 /* Supporting Files */,
+				2A7E0C8E18CEA1F4009B0B10 /* Main_iPhone.storyboard */,
+				2A7E0C9118CEA1F4009B0B10 /* Main_iPad.storyboard */,
+				2A7E0C8B18CEA1F4009B0B10 /* EpicAppDelegate.h */,
+				2A7E0C8C18CEA1F4009B0B10 /* EpicAppDelegate.m */,
+				2A7E0C9418CEA1F4009B0B10 /* EpicViewController.h */,
+				2A7E0C9518CEA1F4009B0B10 /* EpicViewController.m */,
+				2A7E0C9718CEA1F4009B0B10 /* Images.xcassets */,
+				2A7E0C8318CEA1F4009B0B10 /* Supporting Files */,
 			);
-			path = Epic;
+			path = epic;
 			sourceTree = "<group>";
 		};
-		2A96EABC18CEA02800025829 /* Supporting Files */ = {
+		2A7E0C8318CEA1F4009B0B10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2A96EABD18CEA02800025829 /* Epic-Info.plist */,
-				2A96EABE18CEA02800025829 /* InfoPlist.strings */,
-				2A96EAC118CEA02800025829 /* main.m */,
-				2A96EAC318CEA02800025829 /* Epic-Prefix.pch */,
+				2A7E0C8418CEA1F4009B0B10 /* epic-Info.plist */,
+				2A7E0C8518CEA1F4009B0B10 /* InfoPlist.strings */,
+				2A7E0C8818CEA1F4009B0B10 /* main.m */,
+				2A7E0C8A18CEA1F4009B0B10 /* epic-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2A96EADD18CEA02800025829 /* EpicTests */ = {
+		2A7E0CA418CEA1F4009B0B10 /* epicTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A96EAE318CEA02800025829 /* EpicTests.m */,
-				2A96EADE18CEA02800025829 /* Supporting Files */,
+				2A7E0CAA18CEA1F4009B0B10 /* epicTests.m */,
+				2A7E0CA518CEA1F4009B0B10 /* Supporting Files */,
 			);
-			path = EpicTests;
+			path = epicTests;
 			sourceTree = "<group>";
 		};
-		2A96EADE18CEA02800025829 /* Supporting Files */ = {
+		2A7E0CA518CEA1F4009B0B10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2A96EADF18CEA02800025829 /* EpicTests-Info.plist */,
-				2A96EAE018CEA02800025829 /* InfoPlist.strings */,
+				2A7E0CA618CEA1F4009B0B10 /* epicTests-Info.plist */,
+				2A7E0CA718CEA1F4009B0B10 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,57 +158,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A96EAB118CEA02800025829 /* Epic */ = {
+		2A7E0C7818CEA1F4009B0B10 /* epic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A96EAE718CEA02800025829 /* Build configuration list for PBXNativeTarget "Epic" */;
+			buildConfigurationList = 2A7E0CAE18CEA1F4009B0B10 /* Build configuration list for PBXNativeTarget "epic" */;
 			buildPhases = (
-				2A96EAAE18CEA02800025829 /* Sources */,
-				2A96EAAF18CEA02800025829 /* Frameworks */,
-				2A96EAB018CEA02800025829 /* Resources */,
+				2A7E0C7518CEA1F4009B0B10 /* Sources */,
+				2A7E0C7618CEA1F4009B0B10 /* Frameworks */,
+				2A7E0C7718CEA1F4009B0B10 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Epic;
-			productName = Epic;
-			productReference = 2A96EAB218CEA02800025829 /* Epic.app */;
+			name = epic;
+			productName = epic;
+			productReference = 2A7E0C7918CEA1F4009B0B10 /* epic.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2A96EAD518CEA02800025829 /* EpicTests */ = {
+		2A7E0C9C18CEA1F4009B0B10 /* epicTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A96EAEA18CEA02800025829 /* Build configuration list for PBXNativeTarget "EpicTests" */;
+			buildConfigurationList = 2A7E0CB118CEA1F4009B0B10 /* Build configuration list for PBXNativeTarget "epicTests" */;
 			buildPhases = (
-				2A96EAD218CEA02800025829 /* Sources */,
-				2A96EAD318CEA02800025829 /* Frameworks */,
-				2A96EAD418CEA02800025829 /* Resources */,
+				2A7E0C9918CEA1F4009B0B10 /* Sources */,
+				2A7E0C9A18CEA1F4009B0B10 /* Frameworks */,
+				2A7E0C9B18CEA1F4009B0B10 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2A96EADC18CEA02800025829 /* PBXTargetDependency */,
+				2A7E0CA318CEA1F4009B0B10 /* PBXTargetDependency */,
 			);
-			name = EpicTests;
-			productName = EpicTests;
-			productReference = 2A96EAD618CEA02800025829 /* EpicTests.xctest */;
+			name = epicTests;
+			productName = epicTests;
+			productReference = 2A7E0C9D18CEA1F4009B0B10 /* epicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2A96EAAA18CEA02800025829 /* Project object */ = {
+		2A7E0C7118CEA1F4009B0B10 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Epic;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Jason Chu";
 				TargetAttributes = {
-					2A96EAD518CEA02800025829 = {
-						TestTargetID = 2A96EAB118CEA02800025829;
+					2A7E0C9C18CEA1F4009B0B10 = {
+						TestTargetID = 2A7E0C7818CEA1F4009B0B10;
 					};
 				};
 			};
-			buildConfigurationList = 2A96EAAD18CEA02800025829 /* Build configuration list for PBXProject "Epic" */;
+			buildConfigurationList = 2A7E0C7418CEA1F4009B0B10 /* Build configuration list for PBXProject "epic" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -216,97 +216,97 @@
 				en,
 				Base,
 			);
-			mainGroup = 2A96EAA918CEA02800025829;
-			productRefGroup = 2A96EAB318CEA02800025829 /* Products */;
+			mainGroup = 2A7E0C7018CEA1F4009B0B10;
+			productRefGroup = 2A7E0C7A18CEA1F4009B0B10 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A96EAB118CEA02800025829 /* Epic */,
-				2A96EAD518CEA02800025829 /* EpicTests */,
+				2A7E0C7818CEA1F4009B0B10 /* epic */,
+				2A7E0C9C18CEA1F4009B0B10 /* epicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2A96EAB018CEA02800025829 /* Resources */ = {
+		2A7E0C7718CEA1F4009B0B10 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A96EACC18CEA02800025829 /* Main_iPad.storyboard in Resources */,
-				2A96EAD118CEA02800025829 /* Images.xcassets in Resources */,
-				2A96EAC918CEA02800025829 /* Main_iPhone.storyboard in Resources */,
-				2A96EAC018CEA02800025829 /* InfoPlist.strings in Resources */,
+				2A7E0C9318CEA1F4009B0B10 /* Main_iPad.storyboard in Resources */,
+				2A7E0C9818CEA1F4009B0B10 /* Images.xcassets in Resources */,
+				2A7E0C9018CEA1F4009B0B10 /* Main_iPhone.storyboard in Resources */,
+				2A7E0C8718CEA1F4009B0B10 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A96EAD418CEA02800025829 /* Resources */ = {
+		2A7E0C9B18CEA1F4009B0B10 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A96EAE218CEA02800025829 /* InfoPlist.strings in Resources */,
+				2A7E0CA918CEA1F4009B0B10 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A96EAAE18CEA02800025829 /* Sources */ = {
+		2A7E0C7518CEA1F4009B0B10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A96EAC218CEA02800025829 /* main.m in Sources */,
-				2A96EACF18CEA02800025829 /* EpicViewController.m in Sources */,
-				2A96EAC618CEA02800025829 /* EpicAppDelegate.m in Sources */,
+				2A7E0C8918CEA1F4009B0B10 /* main.m in Sources */,
+				2A7E0C9618CEA1F4009B0B10 /* EpicViewController.m in Sources */,
+				2A7E0C8D18CEA1F4009B0B10 /* EpicAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A96EAD218CEA02800025829 /* Sources */ = {
+		2A7E0C9918CEA1F4009B0B10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A96EAE418CEA02800025829 /* EpicTests.m in Sources */,
+				2A7E0CAB18CEA1F4009B0B10 /* epicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2A96EADC18CEA02800025829 /* PBXTargetDependency */ = {
+		2A7E0CA318CEA1F4009B0B10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A96EAB118CEA02800025829 /* Epic */;
-			targetProxy = 2A96EADB18CEA02800025829 /* PBXContainerItemProxy */;
+			target = 2A7E0C7818CEA1F4009B0B10 /* epic */;
+			targetProxy = 2A7E0CA218CEA1F4009B0B10 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A96EABE18CEA02800025829 /* InfoPlist.strings */ = {
+		2A7E0C8518CEA1F4009B0B10 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A96EABF18CEA02800025829 /* en */,
+				2A7E0C8618CEA1F4009B0B10 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2A96EAC718CEA02800025829 /* Main_iPhone.storyboard */ = {
+		2A7E0C8E18CEA1F4009B0B10 /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A96EAC818CEA02800025829 /* Base */,
+				2A7E0C8F18CEA1F4009B0B10 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		2A96EACA18CEA02800025829 /* Main_iPad.storyboard */ = {
+		2A7E0C9118CEA1F4009B0B10 /* Main_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A96EACB18CEA02800025829 /* Base */,
+				2A7E0C9218CEA1F4009B0B10 /* Base */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
-		2A96EAE018CEA02800025829 /* InfoPlist.strings */ = {
+		2A7E0CA718CEA1F4009B0B10 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2A96EAE118CEA02800025829 /* en */,
+				2A7E0CA818CEA1F4009B0B10 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2A96EAE518CEA02800025829 /* Debug */ = {
+		2A7E0CAC18CEA1F4009B0B10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -354,7 +354,7 @@
 			};
 			name = Debug;
 		};
-		2A96EAE618CEA02800025829 /* Release */ = {
+		2A7E0CAD18CEA1F4009B0B10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -388,68 +388,68 @@
 			};
 			name = Release;
 		};
-		2A96EAE818CEA02800025829 /* Debug */ = {
+		2A7E0CAF18CEA1F4009B0B10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Epic/Epic-Prefix.pch";
-				INFOPLIST_FILE = "Epic/Epic-Info.plist";
+				GCC_PREFIX_HEADER = "epic/epic-Prefix.pch";
+				INFOPLIST_FILE = "epic/epic-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		2A96EAE918CEA02800025829 /* Release */ = {
+		2A7E0CB018CEA1F4009B0B10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Epic/Epic-Prefix.pch";
-				INFOPLIST_FILE = "Epic/Epic-Info.plist";
+				GCC_PREFIX_HEADER = "epic/epic-Prefix.pch";
+				INFOPLIST_FILE = "epic/epic-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		2A96EAEB18CEA02800025829 /* Debug */ = {
+		2A7E0CB218CEA1F4009B0B10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Epic.app/Epic";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/epic.app/epic";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Epic/Epic-Prefix.pch";
+				GCC_PREFIX_HEADER = "epic/epic-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "EpicTests/EpicTests-Info.plist";
+				INFOPLIST_FILE = "epicTests/epicTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		2A96EAEC18CEA02800025829 /* Release */ = {
+		2A7E0CB318CEA1F4009B0B10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Epic.app/Epic";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/epic.app/epic";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Epic/Epic-Prefix.pch";
-				INFOPLIST_FILE = "EpicTests/EpicTests-Info.plist";
+				GCC_PREFIX_HEADER = "epic/epic-Prefix.pch";
+				INFOPLIST_FILE = "epicTests/epicTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -459,32 +459,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A96EAAD18CEA02800025829 /* Build configuration list for PBXProject "Epic" */ = {
+		2A7E0C7418CEA1F4009B0B10 /* Build configuration list for PBXProject "epic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A96EAE518CEA02800025829 /* Debug */,
-				2A96EAE618CEA02800025829 /* Release */,
+				2A7E0CAC18CEA1F4009B0B10 /* Debug */,
+				2A7E0CAD18CEA1F4009B0B10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A96EAE718CEA02800025829 /* Build configuration list for PBXNativeTarget "Epic" */ = {
+		2A7E0CAE18CEA1F4009B0B10 /* Build configuration list for PBXNativeTarget "epic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A96EAE818CEA02800025829 /* Debug */,
-				2A96EAE918CEA02800025829 /* Release */,
+				2A7E0CAF18CEA1F4009B0B10 /* Debug */,
+				2A7E0CB018CEA1F4009B0B10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		2A96EAEA18CEA02800025829 /* Build configuration list for PBXNativeTarget "EpicTests" */ = {
+		2A7E0CB118CEA1F4009B0B10 /* Build configuration list for PBXNativeTarget "epicTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A96EAEB18CEA02800025829 /* Debug */,
-				2A96EAEC18CEA02800025829 /* Release */,
+				2A7E0CB218CEA1F4009B0B10 /* Debug */,
+				2A7E0CB318CEA1F4009B0B10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2A96EAAA18CEA02800025829 /* Project object */;
+	rootObject = 2A7E0C7118CEA1F4009B0B10 /* Project object */;
 }

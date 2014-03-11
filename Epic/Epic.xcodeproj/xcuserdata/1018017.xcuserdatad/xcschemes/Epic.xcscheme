@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A96EAB118CEA02800025829"
-               BuildableName = "Epic.app"
-               BlueprintName = "Epic"
-               ReferencedContainer = "container:Epic.xcodeproj">
+               BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
+               BuildableName = "epic.app"
+               BlueprintName = "epic"
+               ReferencedContainer = "container:epic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A96EAD518CEA02800025829"
-               BuildableName = "EpicTests.xctest"
-               BlueprintName = "EpicTests"
-               ReferencedContainer = "container:Epic.xcodeproj">
+               BlueprintIdentifier = "2A7E0C9C18CEA1F4009B0B10"
+               BuildableName = "epicTests.xctest"
+               BlueprintName = "epicTests"
+               ReferencedContainer = "container:epic.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A96EAB118CEA02800025829"
-            BuildableName = "Epic.app"
-            BlueprintName = "Epic"
-            ReferencedContainer = "container:Epic.xcodeproj">
+            BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
+            BuildableName = "epic.app"
+            BlueprintName = "epic"
+            ReferencedContainer = "container:epic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A96EAB118CEA02800025829"
-            BuildableName = "Epic.app"
-            BlueprintName = "Epic"
-            ReferencedContainer = "container:Epic.xcodeproj">
+            BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
+            BuildableName = "epic.app"
+            BlueprintName = "epic"
+            ReferencedContainer = "container:epic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A96EAB118CEA02800025829"
-            BuildableName = "Epic.app"
-            BlueprintName = "Epic"
-            ReferencedContainer = "container:Epic.xcodeproj">
+            BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
+            BuildableName = "epic.app"
+            BlueprintName = "epic"
+            ReferencedContainer = "container:epic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
