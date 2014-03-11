@@ -1,6 +1,6 @@
 //
-//  epicTests.m
-//  epicTests
+//  SimpleChatTests.m
+//  SimpleChatTests
 //
 //  Created by Jason Chu on 3/11/14.
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface epicTests : XCTestCase
+@interface SimpleChatTests : XCTestCase
 
 @end
 
-@implementation epicTests
+@implementation SimpleChatTests
 
 - (void)setUp
 {

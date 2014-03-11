@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
-               BuildableName = "epic.app"
-               BlueprintName = "epic"
-               ReferencedContainer = "container:epic.xcodeproj">
+               BlueprintIdentifier = "96503AB718CF2CBF00D3F9DC"
+               BuildableName = "SimpleChat.app"
+               BlueprintName = "SimpleChat"
+               ReferencedContainer = "container:SimpleChat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A7E0C9C18CEA1F4009B0B10"
-               BuildableName = "epicTests.xctest"
-               BlueprintName = "epicTests"
-               ReferencedContainer = "container:epic.xcodeproj">
+               BlueprintIdentifier = "96503ADB18CF2CC000D3F9DC"
+               BuildableName = "SimpleChatTests.xctest"
+               BlueprintName = "SimpleChatTests"
+               ReferencedContainer = "container:SimpleChat.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
-            BuildableName = "epic.app"
-            BlueprintName = "epic"
-            ReferencedContainer = "container:epic.xcodeproj">
+            BlueprintIdentifier = "96503AB718CF2CBF00D3F9DC"
+            BuildableName = "SimpleChat.app"
+            BlueprintName = "SimpleChat"
+            ReferencedContainer = "container:SimpleChat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
-            BuildableName = "epic.app"
-            BlueprintName = "epic"
-            ReferencedContainer = "container:epic.xcodeproj">
+            BlueprintIdentifier = "96503AB718CF2CBF00D3F9DC"
+            BuildableName = "SimpleChat.app"
+            BlueprintName = "SimpleChat"
+            ReferencedContainer = "container:SimpleChat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A7E0C7818CEA1F4009B0B10"
-            BuildableName = "epic.app"
-            BlueprintName = "epic"
-            ReferencedContainer = "container:epic.xcodeproj">
+            BlueprintIdentifier = "96503AB718CF2CBF00D3F9DC"
+            BuildableName = "SimpleChat.app"
+            BlueprintName = "SimpleChat"
+            ReferencedContainer = "container:SimpleChat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
