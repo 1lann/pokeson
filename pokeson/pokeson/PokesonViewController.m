@@ -7,6 +7,7 @@
 //
 
 #import "PokesonViewController.h"
+#define SHOP_CELL_IDENTIFIER @"shopCell"
 
 @interface PokesonViewController ()
 
@@ -39,13 +40,50 @@
 }
 
 - (NSInteger) numberOfAttributes {
-	return 10;
+	return 5;
 }
 
 - (MultiProgressViewDisplayStyle)displayStyle {
-	return MultiProgressViewDisplayStyleLeftToRight;
+	return MultiProgressViewDisplayStyleRightToLeft;
 }
 - (IBAction)click:(UIButton *)sender {
     [self.barView updateDisplay];
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+	return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SHOP_CELL_IDENTIFIER forIndexPath:indexPath];
+	if (cell == nil) {
+		NSLog(@"new cell");
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+									  reuseIdentifier:SHOP_CELL_IDENTIFIER];
+	}
+    // Configure the cell...
+	cell.textLabel.text = @"Chuie Likes Trains!";
+	cell.detailTextLabel.text = @"Derp";
+	cell.detailTextLabel.textColor = [UIColor colorWithRed:67.0/255.0 green:119.0/255.0 blue:255.0/255.0 alpha:1.0];
+	
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView reloadData];
+	
+}
+
 @end

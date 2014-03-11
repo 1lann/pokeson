@@ -18,10 +18,22 @@
     CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
     CGContextFillRect(context, rect);
     
-	NSInteger barHeigth = 10;
+	NSInteger barHeight = 10;
+    NSInteger barGap = 1;
+    
 	MultiProgressViewDisplayStyle style = [self.delegate displayStyle];
 	
 	NSInteger numberOfAttributes = [self.delegate numberOfAttributes];
+    
+    if(numberOfAttributes*(barHeight+barGap) > rect.size.height) {
+        //barGap = 0;
+       // if (numberOfAttributes*barHeight > rect.size.height) {
+            barHeight = (int)((rect.size.height-numberOfAttributes*barGap)/numberOfAttributes);
+            if (barHeight < 5) {
+                assert(!"Too many bars to cram in such a small space!");
+            }
+        //}
+    }
 	
 	for (NSInteger currentAttribute = 0;
 		 currentAttribute <= numberOfAttributes;
@@ -29,9 +41,9 @@
 		CGRect progressRect;
 		CGFloat width = [self.delegate progressOfAttributeAtIndex:currentAttribute] * rect.size.width;
 		if (style == MultiProgressViewDisplayStyleLeftToRight) {
-			progressRect = CGRectMake(rect.origin.x, rect.origin.y+(currentAttribute*(barHeigth+1)), width, barHeigth);
+			progressRect = CGRectMake(rect.origin.x, rect.origin.y+(currentAttribute*(barHeight+barGap)), width, barHeight);
 		} else if (style == MultiProgressViewDisplayStyleRightToLeft) {
-			progressRect = CGRectMake(rect.origin.x+rect.size.width, rect.origin.y+(currentAttribute*(barHeigth+1)), (-1)*width, barHeigth);
+			progressRect = CGRectMake(rect.origin.x+rect.size.width, rect.origin.y+(currentAttribute*(barHeight+barGap)), (-1)*width, barHeight);
 		} else {
 			assert(!"No display style set");
 		}

@@ -481,6 +481,7 @@
 				96BC471718CC5ACB003119ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96BC471818CC5ACB003119ED /* Build configuration list for PBXNativeTarget "pokesonTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +490,7 @@
 				96BC471A18CC5ACB003119ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
