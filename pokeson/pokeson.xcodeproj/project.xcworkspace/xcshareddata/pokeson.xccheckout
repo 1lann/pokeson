@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2069C35B-F8B6-411C-B011-A674A5415DAD</string>
+	<string>57E05981-72BB-4110-B712-F773FAF1D123</string>
 	<key>IDESourceControlProjectName</key>
 	<string>pokeson</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>94D67F1D-C19E-4A2F-92C9-65E782C930B6</key>
+		<key>52B9A187-9E1B-49E4-BE74-BA517229EAA1</key>
 		<string>https://github.com/1lann/pokeson.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>pokeson/pokeson.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>94D67F1D-C19E-4A2F-92C9-65E782C930B6</key>
+		<key>52B9A187-9E1B-49E4-BE74-BA517229EAA1</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>94D67F1D-C19E-4A2F-92C9-65E782C930B6</string>
+	<string>52B9A187-9E1B-49E4-BE74-BA517229EAA1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>94D67F1D-C19E-4A2F-92C9-65E782C930B6</string>
+			<string>52B9A187-9E1B-49E4-BE74-BA517229EAA1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>pokeson</string>
 		</dict>

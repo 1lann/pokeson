@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AB9021F18D01645006C1979 /* ObjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9021E18D01645006C1979 /* ObjectCell.m */; };
 		96BC46E418CC5ACA003119ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E318CC5ACA003119ED /* Foundation.framework */; };
 		96BC46E618CC5ACA003119ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E518CC5ACA003119ED /* CoreGraphics.framework */; };
 		96BC46E818CC5ACA003119ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E718CC5ACA003119ED /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AB9021D18D01645006C1979 /* ObjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectCell.h; sourceTree = "<group>"; };
+		2AB9021E18D01645006C1979 /* ObjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectCell.m; sourceTree = "<group>"; };
 		96BC46E018CC5ACA003119ED /* pokeson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokeson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BC46E318CC5ACA003119ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96BC46E518CC5ACA003119ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +128,8 @@
 				96BC471C18CC5C13003119ED /* MultiProgressView.m */,
 				96BC46FB18CC5ACA003119ED /* PokesonViewController.h */,
 				96BC46FC18CC5ACA003119ED /* PokesonViewController.m */,
+				2AB9021D18D01645006C1979 /* ObjectCell.h */,
+				2AB9021E18D01645006C1979 /* ObjectCell.m */,
 				96BC46FE18CC5ACA003119ED /* Images.xcassets */,
 				96BC46EA18CC5ACA003119ED /* Supporting Files */,
 			);
@@ -259,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB9021F18D01645006C1979 /* ObjectCell.m in Sources */,
 				96BC46F418CC5ACA003119ED /* PokesonAppDelegate.m in Sources */,
 				96BC471D18CC5C13003119ED /* MultiProgressView.m in Sources */,
 				96BC46F018CC5ACA003119ED /* main.m in Sources */,
