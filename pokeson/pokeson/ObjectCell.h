@@ -10,5 +10,8 @@
 
 @interface ObjectCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @end

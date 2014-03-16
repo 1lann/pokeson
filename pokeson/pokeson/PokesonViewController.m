@@ -7,9 +7,15 @@
 //
 
 #import "PokesonViewController.h"
-#define SHOP_CELL_IDENTIFIER @"shopCell"
+#import "Town.h"
+#import "ObjectCell.h"
+
+#define CELL_STANDARD @"StandardCell"
+#define CELL_PROGRESS @"ProgressCell"
 
 @interface PokesonViewController ()
+
+@property (nonatomic) Town* town;
 
 @end
 
@@ -19,6 +25,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (Town *)town
+{
+	if (!_town) {
+		[_town constructBuilding:[Building buildingWithName:@"Chuie Corp Offices" type:BuildingTypeSpecial]];
+		[_town constructBuilding:[Building buildingWithName:@"Chuie Corp Cafeteria" type:BuildingTypeSpecial]];
+		[_town constructBuilding:[Building buildingWithName:@"Nandos Restruant" type:BuildingTypeCore]];
+		[_town constructBuilding:[Building buildingWithName:@"Nandos 'Breeding' Centre" type:BuildingTypeCore]];
+	}
+	return _town;
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,37 +70,49 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-	return 1;
+	return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-	return 5;
+	return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SHOP_CELL_IDENTIFIER forIndexPath:indexPath];
-	if (cell == nil) {
-		NSLog(@"new cell");
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-									  reuseIdentifier:SHOP_CELL_IDENTIFIER];
+	NSArray* buildingsOfType = [self.town buildingOfType:[indexPath indexAtPosition:0]];
+	Building* building = [buildingsOfType objectAtIndex:[indexPath indexAtPosition:1]];
+	if (building.isConstructionComplete) {
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_STANDARD];
+		cell.textLabel.text = building.name;
+		cell.detailTextLabel.text = [NSString stringWithFormat:@"Level: %i",building.level];
+		return cell;
+	} else {
+		ObjectCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_PROGRESS];
+		cell.titleLabel.text = building.name;
+		cell.detailLabel.text = [NSString stringWithFormat:@"Level: %i",building.level];
+		cell.progressBar.progress = building.progress;
+		return cell;
 	}
-    // Configure the cell...
-	cell.textLabel.text = @"Chuie Likes Trains!";
-	cell.detailTextLabel.text = @"Derp";
-	cell.detailTextLabel.textColor = [UIColor colorWithRed:67.0/255.0 green:119.0/255.0 blue:255.0/255.0 alpha:1.0];
-	
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+	//UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadData];
 	
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+	if (section == 0) {
+		return @"Core Buildings";
+	} else {
+		return @"Special Buildings";
+	}
+}
+
 
 @end

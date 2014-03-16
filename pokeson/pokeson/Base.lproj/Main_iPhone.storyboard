@@ -63,7 +63,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="progressCell" rowHeight="75" id="tM0-ls-seF">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="progressCell" rowHeight="75" id="tM0-ls-seF" customClass="ObjectCell">
                                         <rect key="frame" x="0.0" y="66" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tM0-ls-seF" id="hon-lk-Fev">
@@ -90,6 +90,11 @@
                                                 </progressView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="L3U-7o-i5Y" id="L9t-Hr-TRH"/>
+                                            <outlet property="progressBar" destination="cLQ-y9-c8h" id="T30-gg-Slb"/>
+                                            <outlet property="titleLabel" destination="cec-fu-TJO" id="UBB-9j-m0D"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
