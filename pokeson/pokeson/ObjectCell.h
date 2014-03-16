@@ -8,15 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol MultiProgressViewDelegate <NSObject>
-
-- (CGFloat) progressOfAttributeAtIndex:(NSInteger)index;
-- (NSInteger) numberOfAttributes;
-- (UIColor*) colorOfAttributeAtIndex:(NSInteger)index;
-- (MultiProgressViewDisplayStyle) displayStyle;
-
-@end
-
 @interface ObjectCell : UITableViewCell
 
 
