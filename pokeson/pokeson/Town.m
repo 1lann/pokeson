@@ -22,7 +22,6 @@
 - (NSArray*) buildingOfType:(BuildingType)type
 {
 	NSMutableArray *buildingsOfType = [[NSMutableArray alloc] init];
-	
 	for (Building *building in self.buildings) {
 		if (building.type == type) {
 			[buildingsOfType addObject:building];
