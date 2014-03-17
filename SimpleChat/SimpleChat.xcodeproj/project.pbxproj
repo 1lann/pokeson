@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9601AD7718D72728000CEF3A /* CarrierPigeon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601AD7618D72728000CEF3A /* CarrierPigeon.m */; };
 		96503ABC18CF2CBF00D3F9DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96503ABB18CF2CBF00D3F9DC /* Foundation.framework */; };
 		96503ABE18CF2CBF00D3F9DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96503ABD18CF2CBF00D3F9DC /* CoreGraphics.framework */; };
 		96503AC018CF2CBF00D3F9DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96503ABF18CF2CBF00D3F9DC /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9601AD7518D72728000CEF3A /* CarrierPigeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarrierPigeon.h; sourceTree = "<group>"; };
+		9601AD7618D72728000CEF3A /* CarrierPigeon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarrierPigeon.m; sourceTree = "<group>"; };
 		96503AB818CF2CBF00D3F9DC /* SimpleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96503ABB18CF2CBF00D3F9DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96503ABD18CF2CBF00D3F9DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 				96503AD018CF2CC000D3F9DC /* Main_iPad.storyboard */,
 				96503AF318CF300C00D3F9DC /* ChatManager.h */,
 				96503AF418CF300C00D3F9DC /* ChatManager.m */,
+				9601AD7518D72728000CEF3A /* CarrierPigeon.h */,
+				9601AD7618D72728000CEF3A /* CarrierPigeon.m */,
 				96503ACA18CF2CC000D3F9DC /* SimpleChatAppDelegate.h */,
 				96503ACB18CF2CC000D3F9DC /* SimpleChatAppDelegate.m */,
 				96503AD318CF2CC000D3F9DC /* SimpleChatViewController.h */,
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96503ACC18CF2CC000D3F9DC /* SimpleChatAppDelegate.m in Sources */,
+				9601AD7718D72728000CEF3A /* CarrierPigeon.m in Sources */,
 				96503AC818CF2CC000D3F9DC /* main.m in Sources */,
 				96503AD518CF2CC000D3F9DC /* SimpleChatViewController.m in Sources */,
 				96503AF518CF300C00D3F9DC /* ChatManager.m in Sources */,
@@ -481,6 +487,7 @@
 				96503AEF18CF2CC000D3F9DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96503AF018CF2CC000D3F9DC /* Build configuration list for PBXNativeTarget "SimpleChatTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +496,7 @@
 				96503AF218CF2CC000D3F9DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
