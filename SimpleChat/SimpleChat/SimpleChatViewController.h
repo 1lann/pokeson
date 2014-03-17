@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CarrierPigeon.h"
 
-@interface SimpleChatViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface SimpleChatViewController : UIViewController <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, CarrierPigeonDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;

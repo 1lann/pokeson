@@ -39,6 +39,14 @@
 	return _chat;
 }
 
+- (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender {
+	
+}
+
+// ---------------------------------------------------------- //
+#pragma mark - Buttons and what not
+// ---------------------------------------------------------- //
+
 - (IBAction)sendButtonPressed:(UIButton *)sender {
 	[self.chat storeChatMessage:self.messageField.text withUser:self.chat.username];
 	self.messageField.text = @"";

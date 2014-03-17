@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
+@import MultipeerConnectivity;
+
 #import <Foundation/Foundation.h>
 
 @protocol CarrierPigeonDelegate <NSObject>
@@ -15,9 +17,17 @@
 
 @end
 
-@interface CarrierPigeon : NSObject
+@interface CarrierPigeon : NSObject <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate>
+
+@property (readonly) NSString* broadcastName;
+@property (readonly) MCPeerID* peerID;
+@property (readonly) MCNearbyServiceAdvertiser* advertiser;
+@property (readonly) MCSession* session;
+@property (nonatomic, assign) id <CarrierPigeonDelegate> delegate;
+
 
 - (void)sendMessage:(NSString *)message;
-- (void)connectToNetwork:(NSString *)ourName;
+- (void)connectToNetwork:(NSString *)targetName;
+- (CarrierPigeon*)initWithName:(NSString*)ourName;
 
 @end
