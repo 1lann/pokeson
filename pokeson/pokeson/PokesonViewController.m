@@ -30,6 +30,7 @@
 - (Town *)town
 {
 	if (!_town) {
+        _town = [[Town alloc] init];
 		[_town constructBuilding:[Building buildingWithName:@"Chuie Corp Offices" type:BuildingTypeSpecial]];
 		[_town constructBuilding:[Building buildingWithName:@"Chuie Corp Cafeteria" type:BuildingTypeSpecial]];
 		[_town constructBuilding:[Building buildingWithName:@"Nandos Restruant" type:BuildingTypeCore]];
@@ -103,6 +104,11 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadData];
 	
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

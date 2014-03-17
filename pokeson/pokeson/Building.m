@@ -23,13 +23,6 @@
  
 @implementation Building
 
-+ (Building*) buildingWithName:(NSString*) name type:(BuildingType) type {
-	Building* building = [[Building alloc] init];
-	building.name = name;
-	building.type = type;
-	return building;
-}
-
 - (BOOL) isConstructionComplete
 {
 	if (self.progress >= 1) {
@@ -52,5 +45,13 @@
 		self.type = BuildingTypeCore;
     }
     return self;
+}
+
+
++ (Building*) buildingWithName:(NSString*) name type:(BuildingType) type {
+	Building* building = [[Building alloc] init];
+	building.name = name;
+	building.type = type;
+	return building;
 }
 @end
