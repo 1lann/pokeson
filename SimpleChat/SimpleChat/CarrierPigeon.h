@@ -13,21 +13,18 @@
 @protocol CarrierPigeonDelegate <NSObject>
 
 - (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender;
-- (void)didConnectToNetwork:(BOOL)successful;
+- (void)networkChange:(NSArray*)peerNames;
+- (void)networkError:(NSError*)error;
 
 @end
 
-@interface CarrierPigeon : NSObject <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate>
+@interface CarrierPigeon : NSObject <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate, MCNearbyServiceBrowserDelegate>
 
-@property (readonly) NSString* broadcastName;
-@property (readonly) MCPeerID* peerID;
-@property (readonly) MCNearbyServiceAdvertiser* advertiser;
-@property (readonly) MCSession* session;
+
 @property (nonatomic, assign) id <CarrierPigeonDelegate> delegate;
 
-
-- (void)sendMessage:(NSString *)message;
-- (void)connectToNetwork:(NSString *)targetName;
-- (CarrierPigeon*)initWithName:(NSString*)ourName;
+- (BOOL)sendMessage:(NSString *)message;
+- (BOOL)sendMessage:(NSString *)message targetName:(NSString*)targetName;
+- (void)connectToNetwork:(NSString *)displayName;
 
 @end
