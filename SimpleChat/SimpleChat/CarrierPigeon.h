@@ -26,5 +26,6 @@
 - (BOOL)sendMessage:(NSString *)message;
 - (BOOL)sendMessage:(NSString *)message targetName:(NSString*)targetName;
 - (void)connectToNetwork:(NSString *)displayName;
+- (void)disconnect;
 
 @end

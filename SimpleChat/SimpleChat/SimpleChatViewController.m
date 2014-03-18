@@ -8,6 +8,7 @@
 
 #import "SimpleChatViewController.h"
 #import "ChatManager.h"
+
 #define MESSAGE_FIELD_TAG 2
 #define NAME_FIELD_TAG 1
 #define CELL_IDENTIFIER @"tableCell"
@@ -15,6 +16,7 @@
 @interface SimpleChatViewController ()
 
 @property (nonatomic) ChatManager* chat;
+@property CarrierPigeon* pigeon;
 
 @end
 
@@ -26,6 +28,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
 	[self.tableView addGestureRecognizer:tap];
+	self.pigeon = [[CarrierPigeon alloc] init];
+	[self.pigeon connectToNetwork:@"Chuie"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +44,15 @@
 }
 
 - (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender {
-	
+	NSLog(@"Received Message: %@",message);
+}
+
+- (void)networkChange:(NSArray *)peerNames {
+	NSLog(@"Network Change");
+}
+
+- (void)networkError:(NSError *)error {
+	NSLog(@"Network Error");
 }
 
 // ---------------------------------------------------------- //
@@ -48,9 +60,10 @@
 // ---------------------------------------------------------- //
 
 - (IBAction)sendButtonPressed:(UIButton *)sender {
-	[self.chat storeChatMessage:self.messageField.text withUser:self.chat.username];
-	self.messageField.text = @"";
-	[self.tableView reloadData];
+	//[self.chat storeChatMessage:self.messageField.text withUser:self.chat.username];
+	//self.messageField.text = @"";
+	//[self.tableView reloadData];
+	NSLog(@"Attempt to send: %hhd", [self.pigeon sendMessage:@"LoL" targetName:@"Chuie"]);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

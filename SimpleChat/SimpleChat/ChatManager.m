@@ -15,6 +15,7 @@
 @property NSMutableArray* users;
 @property NSMutableArray* messages;
 
+
 @end
 
 @implementation ChatManager
