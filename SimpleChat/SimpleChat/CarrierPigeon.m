@@ -42,10 +42,6 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 {
     if (![self.session.connectedPeers containsObject:peerID]) {
         if (PIGEON_DEBUG) NSLog(@"PIGEON: Peer inviting to connect: %@",peerID.displayName);
-        self.session = [[MCSession alloc] initWithPeer:self.peerID
-                                      securityIdentity:nil
-                                  encryptionPreference:MCEncryptionNone];
-        self.session.delegate = self;
         invitationHandler(YES, self.session);
     }
 	return;
@@ -76,8 +72,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 		if (PIGEON_DEBUG) NSLog(@"PIGEON: Disconnected: %@",peerID.displayName);
 		[self.peerNames removeObject:peerID.displayName];
 		[self.delegate networkChange:self.peerNames];
-        NSObject* setTimeoutObject = [[NSObject alloc] init];
-        [setTimeoutObject performSelector:@selector(tryToReconnect) withObject:nil afterDelay:0.5];
+        [self tryToReconnect];
 	} else {
 		if (PIGEON_DEBUG) NSLog(@"PIGEON: Unknown state change of: %@",peerID.displayName);
 	}
@@ -92,7 +87,8 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 								  securityIdentity:nil
 							  encryptionPreference:MCEncryptionNone];
 	self.session.delegate = self;
-	
+	[self.browser invitePeer:self.peerID toSession:self.session withContext:nil timeout:3.0];
+    
     // Broadcast Peer
     self.advertiser =
     [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.peerID
@@ -100,6 +96,9 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
                                         serviceType:SERVICE_TYPE];
     self.advertiser.delegate = self;
     [self.advertiser startAdvertisingPeer];
+    
+    MCAdvertiserAssistant* assistant = [[MCAdvertiserAssistant alloc] initWithServiceType:SERVICE_TYPE discoveryInfo:nil session:self.session];
+    [assistant start];
     
     // Find Other Peers
 	if (self.browser) {
@@ -161,8 +160,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
     // Try to send message
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
-    NSArray *target = self.session.connectedPeers;
-    [self.session sendData:data toPeers:target withMode:MCSessionSendDataReliable error:&error];
+    [self.session sendData:data toPeers:self.session.connectedPeers withMode:MCSessionSendDataReliable error:&error];
     if (error) {
         if (PIGEON_DEBUG) NSLog(@"PIGEON: An error occured while broadcasting message");
         return NO;

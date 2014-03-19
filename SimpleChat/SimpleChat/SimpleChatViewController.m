@@ -30,6 +30,7 @@
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
 	[self.tableView addGestureRecognizer:tap];
 	self.pigeon = [[CarrierPigeon alloc] init];
+    self.pigeon.delegate = self;
 	[self.pigeon connectToNetwork:USERNAME];
 }
 
