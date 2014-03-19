@@ -48,6 +48,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 }
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
+    if (PIGEON_DEBUG) NSLog(@"PIGEON: Received message from: %@",peerID.displayName);
 	NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	[self.delegate didReceiveMessage:message fromSender:peerID.displayName];
 }
@@ -92,7 +93,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
     self.browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID serviceType:SERVICE_TYPE];
     self.browser.delegate = self;
     [self.browser startBrowsingForPeers];
-    NSLog(@"PIGEON: Started browsing for peers");
+    if (PIGEON_DEBUG) NSLog(@"PIGEON: Started browsing for peers");
 }
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error {
@@ -130,10 +131,8 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
             NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
             NSError *error = nil;
             NSArray *target = @[peer];
-            if (![self.session sendData:data
-                                toPeers:target
-                               withMode:MCSessionSendDataReliable
-                                  error:&error]) {
+            [self.session sendData:data toPeers:target withMode:MCSessionSendDataReliable error:&error];
+            if (error) {
 				if (PIGEON_DEBUG) NSLog(@"PIGEON: An error occured while sending message");
                 return NO;
             } else {
@@ -151,10 +150,8 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     NSArray *target = self.session.connectedPeers;
-    if (![self.session sendData:data
-                        toPeers:target
-                       withMode:MCSessionSendDataReliable
-                          error:&error]) {
+    [self.session sendData:data toPeers:target withMode:MCSessionSendDataReliable error:&error];
+    if (error) {
         if (PIGEON_DEBUG) NSLog(@"PIGEON: An error occured while broadcasting message");
         return NO;
     } else {
@@ -188,12 +185,15 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress {
+    if (PIGEON_DEBUG) NSLog(@"PIGEON: Received Resource");
 }
 
 - (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error {
+    if (PIGEON_DEBUG) NSLog(@"PIGEON: Finished Resource");
 }
 
 - (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID {
+    if (PIGEON_DEBUG) NSLog(@"PIGEON: Received Stream");
 }
 
 @end
