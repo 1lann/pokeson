@@ -42,6 +42,10 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 {
     if (![self.session.connectedPeers containsObject:peerID]) {
         if (PIGEON_DEBUG) NSLog(@"PIGEON: Peer inviting to connect: %@",peerID.displayName);
+        self.session = [[MCSession alloc] initWithPeer:self.peerID
+                                      securityIdentity:nil
+                                  encryptionPreference:MCEncryptionNone];
+        self.session.delegate = self;
         invitationHandler(YES, self.session);
     }
 	return;
@@ -53,6 +57,16 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 	[self.delegate didReceiveMessage:message fromSender:peerID.displayName];
 }
 
+- (void)tryToReconnect {
+    NSLog(@"Checking for dropped connections...");
+    for (MCPeerID* visiblePeer in self.visiblePeers) {
+        if (![self.session.connectedPeers containsObject:visiblePeer]) {
+            NSLog(@"Connection dropped with: %@, Reconnecting...",visiblePeer.displayName);
+            [self.browser invitePeer:visiblePeer toSession:self.session withContext:nil timeout:3.0];
+        }
+    }
+}
+
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state {
 	if (state == MCSessionStateConnected) {
 		if (PIGEON_DEBUG) NSLog(@"PIGEON: Connected: %@",peerID.displayName);
@@ -62,6 +76,8 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 		if (PIGEON_DEBUG) NSLog(@"PIGEON: Disconnected: %@",peerID.displayName);
 		[self.peerNames removeObject:peerID.displayName];
 		[self.delegate networkChange:self.peerNames];
+        NSObject* setTimeoutObject = [[NSObject alloc] init];
+        [setTimeoutObject performSelector:@selector(tryToReconnect) withObject:nil afterDelay:0.5];
 	} else {
 		if (PIGEON_DEBUG) NSLog(@"PIGEON: Unknown state change of: %@",peerID.displayName);
 	}
@@ -118,10 +134,6 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 - (void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error {
 	if (PIGEON_DEBUG) NSLog(@"PIGEON: An error occured while trying to start browsing");
     [self.delegate networkError:error];
-}
-
-- (BOOL)sendMessage:(NSString *)targetName {
-	return true;
 }
 
 - (BOOL)sendMessage:(NSString *)message targetName:(NSString *)targetName {
