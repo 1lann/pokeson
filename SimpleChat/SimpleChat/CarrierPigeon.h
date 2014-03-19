@@ -23,7 +23,7 @@
 
 @property (nonatomic, assign) id <CarrierPigeonDelegate> delegate;
 
-- (BOOL)sendMessage:(NSString *)message;
+- (BOOL)broadcastMessage:(NSString *)message;
 - (BOOL)sendMessage:(NSString *)message targetName:(NSString*)targetName;
 - (void)connectToNetwork:(NSString *)displayName;
 - (void)disconnect;

@@ -12,6 +12,7 @@
 #define MESSAGE_FIELD_TAG 2
 #define NAME_FIELD_TAG 1
 #define CELL_IDENTIFIER @"tableCell"
+#define USERNAME @"Chuie"
 
 @interface SimpleChatViewController ()
 
@@ -29,7 +30,7 @@
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
 	[self.tableView addGestureRecognizer:tap];
 	self.pigeon = [[CarrierPigeon alloc] init];
-	[self.pigeon connectToNetwork:@"Chuie"];
+	[self.pigeon connectToNetwork:USERNAME];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +46,8 @@
 
 - (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender {
 	NSLog(@"Received Message: %@",message);
+    [self.chat storeChatMessage:message withUser:sender];
+    [self.tableView reloadData];
 }
 
 - (void)networkChange:(NSArray *)peerNames {
@@ -60,18 +63,19 @@
 // ---------------------------------------------------------- //
 
 - (IBAction)sendButtonPressed:(UIButton *)sender {
-	//[self.chat storeChatMessage:self.messageField.text withUser:self.chat.username];
-	//self.messageField.text = @"";
-	//[self.tableView reloadData];
-	NSLog(@"Attempt to send: %hhd", [self.pigeon sendMessage:@"LoL" targetName:@"Chuie"]);
+	[self.chat storeChatMessage:self.messageField.text withUser:USERNAME];
+	self.messageField.text = @"";
+	[self.tableView reloadData];
+	NSLog(@"Attempt to send: %hhd", [self.pigeon broadcastMessage:self.messageField.text]);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	if (textField.tag == MESSAGE_FIELD_TAG) {
 		// Send
-		[self.chat storeChatMessage:textField.text withUser:self.chat.username];
+		[self.chat storeChatMessage:textField.text withUser:USERNAME];
 		textField.text = @"";
 		[self.tableView reloadData];
+        NSLog(@"Attempt to send: %hhd", [self.pigeon broadcastMessage:self.messageField.text]);
 		return YES;
 	} else {
 		[textField resignFirstResponder];

@@ -88,6 +88,9 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
         self.browser = NULL;
     }
     self.browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID serviceType:SERVICE_TYPE];
+    self.browser.delegate = self;
+    [self.browser startBrowsingForPeers];
+    NSLog(@"PIGEON: Started browsing for peers");
 }
 
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error {
@@ -137,6 +140,23 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
     }
 	if (PIGEON_DEBUG) NSLog(@"PIGEON: Target not connected");
 	return NO;
+}
+
+- (BOOL)broadcastMessage:(NSString *)message {
+    // Try to send message
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    NSArray *target = self.session.connectedPeers;
+    if (![self.session sendData:data
+                        toPeers:target
+                       withMode:MCSessionSendDataReliable
+                          error:&error]) {
+        if (PIGEON_DEBUG) NSLog(@"PIGEON: An error occured while broadcasting message");
+        return NO;
+    } else {
+        if (PIGEON_DEBUG) NSLog(@"PIGEON: Message broadcasted");
+        return YES;
+    }
 }
 
 - (void) disconnect {
