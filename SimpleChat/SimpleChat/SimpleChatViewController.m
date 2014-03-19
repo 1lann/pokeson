@@ -42,6 +42,7 @@
 - (ChatManager*) chat {
 	if (!_chat) _chat = [[ChatManager alloc] init];
 	return _chat;
+    
 }
 
 - (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender {

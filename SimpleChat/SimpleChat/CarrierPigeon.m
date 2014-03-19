@@ -40,8 +40,10 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 				 withContext:(NSData *)context
 		  invitationHandler:(void(^)(BOOL accept, MCSession *session))invitationHandler
 {
-	if (PIGEON_DEBUG) NSLog(@"PIGEON: Peer inviting to connect: %@",peerID.displayName);
-	invitationHandler(YES, self.session);
+    if (![self.session.connectedPeers containsObject:peerID]) {
+        if (PIGEON_DEBUG) NSLog(@"PIGEON: Peer inviting to connect: %@",peerID.displayName);
+        invitationHandler(YES, self.session);
+    }
 	return;
 }
 
@@ -99,9 +101,11 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info {
-	if (PIGEON_DEBUG) NSLog(@"PIGEON: Found peer, inviting: %@",peerID.displayName);
-    [self.visiblePeers addObject:peerID];
-	[self.browser invitePeer:peerID toSession:self.session withContext:nil timeout:3.0];
+	if (!([self.visiblePeers containsObject:peerID] || [self.session.connectedPeers containsObject:peerID])) {
+        if (PIGEON_DEBUG) NSLog(@"PIGEON: Found peer, inviting: %@",peerID.displayName);
+        [self.visiblePeers addObject:peerID];
+        [self.browser invitePeer:peerID toSession:self.session withContext:nil timeout:3.0];
+    }
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID {
