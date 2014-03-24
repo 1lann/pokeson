@@ -9,7 +9,7 @@
 #import "CarrierPigeon.h"
 
 #define SERVICE_TYPE @"pokeson-pigeon"
-#define PIGEON_DEBUG @NO
+#define PIGEON_DEBUG YES
 
 @interface CarrierPigeon ()
 
