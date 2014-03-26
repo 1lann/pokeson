@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A8418DA18E2922700072B66 /* PokesonMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8418D918E2922700072B66 /* PokesonMenuViewController.m */; };
 		2AB9021F18D01645006C1979 /* ObjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9021E18D01645006C1979 /* ObjectCell.m */; };
 		96369A7218D52C3E00CD66EC /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = 96369A7118D52C3E00CD66EC /* Building.m */; };
 		96369A7518D52C6800CD66EC /* Town.m in Sources */ = {isa = PBXBuildFile; fileRef = 96369A7418D52C6800CD66EC /* Town.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A8418D818E2922700072B66 /* PokesonMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokesonMenuViewController.h; sourceTree = "<group>"; };
+		2A8418D918E2922700072B66 /* PokesonMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokesonMenuViewController.m; sourceTree = "<group>"; };
 		2AB9021D18D01645006C1979 /* ObjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectCell.h; sourceTree = "<group>"; };
 		2AB9021E18D01645006C1979 /* ObjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectCell.m; sourceTree = "<group>"; };
 		96369A7018D52C3E00CD66EC /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 			children = (
 				96BC46F518CC5ACA003119ED /* Main_iPhone.storyboard */,
 				96BC46F818CC5ACA003119ED /* Main_iPad.storyboard */,
+				2A8418D818E2922700072B66 /* PokesonMenuViewController.h */,
+				2A8418D918E2922700072B66 /* PokesonMenuViewController.m */,
 				96BC46F218CC5ACA003119ED /* PokesonAppDelegate.h */,
 				96BC46F318CC5ACA003119ED /* PokesonAppDelegate.m */,
 				96BC471B18CC5C13003119ED /* MultiProgressView.h */,
@@ -275,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AB9021F18D01645006C1979 /* ObjectCell.m in Sources */,
+				2A8418DA18E2922700072B66 /* PokesonMenuViewController.m in Sources */,
 				96BC46F418CC5ACA003119ED /* PokesonAppDelegate.m in Sources */,
 				96369A7518D52C6800CD66EC /* Town.m in Sources */,
 				96BC471D18CC5C13003119ED /* MultiProgressView.m in Sources */,
