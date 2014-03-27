@@ -7,6 +7,7 @@
 //
 
 #import "PokesonMenuViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PokesonMenuViewController ()
 
@@ -26,8 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.manageButton.layer.shadowColor = [[UIColor whiteColor] CGColor];
-    self.manageButton.layer.shadowOffset = CGSizeMake(0.5, 0.5);
+    self.manageButton.layer.masksToBounds = NO;
+    self.manageButton.layer.borderWidth = 0.0f;
+    
+    self.manageButton.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.manageButton.layer.shadowOpacity = 1;
+    self.manageButton.layer.shadowRadius = 8;
+    self.manageButton.layer.shadowOffset = CGSizeMake(0,0);
 }
 
 - (void)didReceiveMemoryWarning
