@@ -11,6 +11,8 @@
 		2AB9021F18D01645006C1979 /* ObjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9021E18D01645006C1979 /* ObjectCell.m */; };
 		96369A7218D52C3E00CD66EC /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = 96369A7118D52C3E00CD66EC /* Building.m */; };
 		96369A7518D52C6800CD66EC /* Town.m in Sources */ = {isa = PBXBuildFile; fileRef = 96369A7418D52C6800CD66EC /* Town.m */; };
+		9650C6B818E8500A00927D80 /* PokesonManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650C6B718E8500A00927D80 /* PokesonManagerViewController.m */; };
+		9650C6BB18E8592700927D80 /* Pokeson.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650C6BA18E8592700927D80 /* Pokeson.m */; };
 		96BC46E418CC5ACA003119ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E318CC5ACA003119ED /* Foundation.framework */; };
 		96BC46E618CC5ACA003119ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E518CC5ACA003119ED /* CoreGraphics.framework */; };
 		96BC46E818CC5ACA003119ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E718CC5ACA003119ED /* UIKit.framework */; };
@@ -48,6 +50,10 @@
 		96369A7118D52C3E00CD66EC /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
 		96369A7318D52C6800CD66EC /* Town.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Town.h; sourceTree = "<group>"; };
 		96369A7418D52C6800CD66EC /* Town.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Town.m; sourceTree = "<group>"; };
+		9650C6B618E8500A00927D80 /* PokesonManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokesonManagerViewController.h; sourceTree = "<group>"; };
+		9650C6B718E8500A00927D80 /* PokesonManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokesonManagerViewController.m; sourceTree = "<group>"; };
+		9650C6B918E8592700927D80 /* Pokeson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokeson.h; sourceTree = "<group>"; };
+		9650C6BA18E8592700927D80 /* Pokeson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokeson.m; sourceTree = "<group>"; };
 		96BC46E018CC5ACA003119ED /* pokeson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokeson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BC46E318CC5ACA003119ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96BC46E518CC5ACA003119ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +137,10 @@
 			children = (
 				96BC46F518CC5ACA003119ED /* Main_iPhone.storyboard */,
 				96BC46F818CC5ACA003119ED /* Main_iPad.storyboard */,
+				9650C6B918E8592700927D80 /* Pokeson.h */,
+				9650C6BA18E8592700927D80 /* Pokeson.m */,
+				9650C6B618E8500A00927D80 /* PokesonManagerViewController.h */,
+				9650C6B718E8500A00927D80 /* PokesonManagerViewController.m */,
 				2A8418D818E2922700072B66 /* PokesonMenuViewController.h */,
 				2A8418D918E2922700072B66 /* PokesonMenuViewController.m */,
 				96BC46F218CC5ACA003119ED /* PokesonAppDelegate.h */,
@@ -280,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AB9021F18D01645006C1979 /* ObjectCell.m in Sources */,
+				9650C6BB18E8592700927D80 /* Pokeson.m in Sources */,
 				2A8418DA18E2922700072B66 /* PokesonMenuViewController.m in Sources */,
 				96BC46F418CC5ACA003119ED /* PokesonAppDelegate.m in Sources */,
 				96369A7518D52C6800CD66EC /* Town.m in Sources */,
@@ -287,6 +298,7 @@
 				96BC46F018CC5ACA003119ED /* main.m in Sources */,
 				96BC46FD18CC5ACA003119ED /* PokesonViewController.m in Sources */,
 				96369A7218D52C3E00CD66EC /* Building.m in Sources */,
+				9650C6B818E8500A00927D80 /* PokesonManagerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

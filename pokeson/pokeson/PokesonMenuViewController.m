@@ -24,16 +24,22 @@
     return self;
 }
 
+- (void)applyGlow:(UIButton*) button {
+	button.layer.masksToBounds = NO;
+    button.layer.borderWidth = 0.0f;
+    
+    button.layer.shadowColor = [UIColor whiteColor].CGColor;
+    button.layer.shadowOpacity = 1;
+    button.layer.shadowRadius = 8;
+    button.layer.shadowOffset = CGSizeMake(0,0);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.manageButton.layer.masksToBounds = NO;
-    self.manageButton.layer.borderWidth = 0.0f;
-    
-    self.manageButton.layer.shadowColor = [UIColor whiteColor].CGColor;
-    self.manageButton.layer.shadowOpacity = 1;
-    self.manageButton.layer.shadowRadius = 8;
-    self.manageButton.layer.shadowOffset = CGSizeMake(0,0);
+    [self applyGlow:self.manageButton];
+	[self applyGlow:self.structuresButton];
+	[self applyGlow:self.travelButton];
 }
 
 - (void)didReceiveMemoryWarning

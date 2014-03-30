@@ -10,5 +10,7 @@
 
 @interface PokesonMenuViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *manageButton;
+@property (weak, nonatomic) IBOutlet UIButton *structuresButton;
+@property (weak, nonatomic) IBOutlet UIButton *travelButton;
 
 @end
