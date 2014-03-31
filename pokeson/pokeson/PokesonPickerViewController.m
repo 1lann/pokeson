@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
-#import "PokesonManagerViewController.h"
+#import "PokesonPickerViewController.h"
 
-@interface PokesonManagerViewController ()
+@interface PokesonPickerViewController ()
 
 @end
 
-@implementation PokesonManagerViewController
+@implementation PokesonPickerViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +31,6 @@
     self.navigationController.navigationBar.translucent = NO;
 	self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 	[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-	NSLog(@"DERP");
 }
 
 - (void)didReceiveMemoryWarning

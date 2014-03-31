@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PokesonManagerViewController : UIViewController
+@interface PokesonPickerViewController : UIViewController
 
 @end

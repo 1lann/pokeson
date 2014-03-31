@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *structuresButton;
 @property (weak, nonatomic) IBOutlet UIButton *travelButton;
 
+- (IBAction)unwindFromPokesonPicker:(UIStoryboardSegue*) segue;
 @end

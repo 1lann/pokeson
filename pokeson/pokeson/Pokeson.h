@@ -10,11 +10,12 @@
 
 @interface Pokeson : NSObject
 
-@property float tiredness;
-@property float health;
+@property float energy;
+@property float healthState;
 @property float sleepProgress;
 @property float level;
+@property NSString* species;
 @property UIImage* image;
-
+@property NSString* name;
 
 @end
