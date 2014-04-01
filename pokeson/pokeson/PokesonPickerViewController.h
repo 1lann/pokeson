@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PokesonPickerViewController : UIViewController
+@interface PokesonPickerViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *pickerView;
 
 @end

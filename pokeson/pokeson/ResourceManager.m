@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
-#import "EconomyManager.h"
+#import "ResourceManager.h"
 
-@implementation EconomyManager
+@implementation ResourceManager
 
 @end

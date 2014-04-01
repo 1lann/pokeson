@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EconomyManager : NSObject
+@interface ResourceManager : NSObject
 
 @end

@@ -20,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Pl-UE-3YK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31" y="-681"/>
+            <point key="canvasLocation" x="308" y="-661"/>
         </scene>
         <!--Pokeson Menu View Controller-->
         <scene sceneID="3CD-T9-LVe">
@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eln-br-tao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-593" y="-637"/>
+            <point key="canvasLocation" x="-139" y="-661"/>
         </scene>
         <!--Pokeson Picker View Controller - Manage Pokesons-->
         <scene sceneID="urc-pF-6N5">
@@ -116,6 +116,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="NNj-9W-9tm" id="juk-iz-dB6"/>
+                                    <outlet property="delegate" destination="NNj-9W-9tm" id="AKj-PE-Rpw"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -129,11 +133,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="pickerView" destination="wNJ-rT-Raj" id="RTS-D2-c2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Df9-k2-weF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N4k-9Q-eTg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="605" y="-649"/>
+            <point key="canvasLocation" x="723" y="-661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nmd-Uh-8x0">
@@ -209,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9m-uN-eu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2251" y="-573"/>
+            <point key="canvasLocation" x="2056" y="-661"/>
         </scene>
         <!--View Controller - Item 1-->
         <scene sceneID="fma-xU-hs8">
@@ -378,7 +385,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cla-jE-k7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="-573"/>
+            <point key="canvasLocation" x="1617" y="-661"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

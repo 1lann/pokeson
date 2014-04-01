@@ -14,7 +14,7 @@
 		2AF1393D18E926FB009280BC /* PlayerInventoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1393C18E926FB009280BC /* PlayerInventoryManager.m */; };
 		2AF1394018E927BF009280BC /* DiseaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1393F18E927BF009280BC /* DiseaseManager.m */; };
 		2AF1394318E927CB009280BC /* MedicineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1394218E927CB009280BC /* MedicineManager.m */; };
-		2AF1394618E927F0009280BC /* EconomyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1394518E927F0009280BC /* EconomyManager.m */; };
+		2AF1394618E927F0009280BC /* ResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1394518E927F0009280BC /* ResourceManager.m */; };
 		2AF1394918E92801009280BC /* ItemsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1394818E92801009280BC /* ItemsManager.m */; };
 		2AF1394C18E92AA1009280BC /* Disease.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1394B18E92AA1009280BC /* Disease.m */; };
 		2AF1394F18E92AB4009280BC /* ResearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1394E18E92AB4009280BC /* ResearchManager.m */; };
@@ -67,8 +67,8 @@
 		2AF1393F18E927BF009280BC /* DiseaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiseaseManager.m; sourceTree = "<group>"; };
 		2AF1394118E927CB009280BC /* MedicineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicineManager.h; sourceTree = "<group>"; };
 		2AF1394218E927CB009280BC /* MedicineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicineManager.m; sourceTree = "<group>"; };
-		2AF1394418E927F0009280BC /* EconomyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EconomyManager.h; sourceTree = "<group>"; };
-		2AF1394518E927F0009280BC /* EconomyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EconomyManager.m; sourceTree = "<group>"; };
+		2AF1394418E927F0009280BC /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		2AF1394518E927F0009280BC /* ResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceManager.m; sourceTree = "<group>"; };
 		2AF1394718E92801009280BC /* ItemsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsManager.h; sourceTree = "<group>"; };
 		2AF1394818E92801009280BC /* ItemsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsManager.m; sourceTree = "<group>"; };
 		2AF1394A18E92AA1009280BC /* Disease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Disease.h; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 				2AF1394818E92801009280BC /* ItemsManager.m */,
 				2AF1393B18E926FB009280BC /* PlayerInventoryManager.h */,
 				2AF1393C18E926FB009280BC /* PlayerInventoryManager.m */,
-				2AF1394418E927F0009280BC /* EconomyManager.h */,
-				2AF1394518E927F0009280BC /* EconomyManager.m */,
+				2AF1394418E927F0009280BC /* ResourceManager.h */,
+				2AF1394518E927F0009280BC /* ResourceManager.m */,
 				2AF1393518E92696009280BC /* Player.h */,
 				2AF1393618E92696009280BC /* Player.m */,
 			);
@@ -181,6 +181,8 @@
 		2AF1395A18E92B43009280BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96BC46FB18CC5ACA003119ED /* PokesonViewController.h */,
+				96BC46FC18CC5ACA003119ED /* PokesonViewController.m */,
 				9650C6B618E8500A00927D80 /* PokesonPickerViewController.h */,
 				9650C6B718E8500A00927D80 /* PokesonPickerViewController.m */,
 				2A8418D818E2922700072B66 /* PokesonMenuViewController.h */,
@@ -234,8 +236,6 @@
 				2AF1395318E92AE2009280BC /* DayManager.h */,
 				2AF1395418E92AE2009280BC /* DayManager.m */,
 				2AF1395A18E92B43009280BC /* Views */,
-				96BC46FB18CC5ACA003119ED /* PokesonViewController.h */,
-				96BC46FC18CC5ACA003119ED /* PokesonViewController.m */,
 				96369A7018D52C3E00CD66EC /* Building.h */,
 				96369A7118D52C3E00CD66EC /* Building.m */,
 				96369A7318D52C6800CD66EC /* Town.h */,
@@ -376,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AF1394618E927F0009280BC /* EconomyManager.m in Sources */,
+				2AF1394618E927F0009280BC /* ResourceManager.m in Sources */,
 				2AB9021F18D01645006C1979 /* ObjectCell.m in Sources */,
 				2AF1395218E92AC0009280BC /* Research.m in Sources */,
 				9650C6BB18E8592700927D80 /* Pokeson.m in Sources */,
