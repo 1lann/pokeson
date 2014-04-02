@@ -66,18 +66,18 @@
 
 - (IBAction)sendButtonPressed:(UIButton *)sender {
 	[self.chat storeChatMessage:self.messageField.text withUser:USERNAME];
+    [self.pigeon broadcastMessage:self.messageField.text];
 	self.messageField.text = @"";
 	[self.tableView reloadData];
-	NSLog(@"Attempt to send: %hhd", [self.pigeon broadcastMessage:self.messageField.text]);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	if (textField.tag == MESSAGE_FIELD_TAG) {
 		// Send
 		[self.chat storeChatMessage:textField.text withUser:USERNAME];
+        [self.pigeon broadcastMessage:self.messageField.text];
 		textField.text = @"";
 		[self.tableView reloadData];
-        NSLog(@"Attempt to send: %hhd", [self.pigeon broadcastMessage:self.messageField.text]);
 		return YES;
 	} else {
 		[textField resignFirstResponder];

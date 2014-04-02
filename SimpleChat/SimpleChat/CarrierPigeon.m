@@ -40,42 +40,40 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 				 withContext:(NSData *)context
 		  invitationHandler:(void(^)(BOOL accept, MCSession *session))invitationHandler
 {
-    if (![self.session.connectedPeers containsObject:peerID]) {
-        if (PIGEON_DEBUG) NSLog(@"PIGEON: Peer inviting to connect: %@",peerID.displayName);
-        invitationHandler(YES, self.session);
-    }
-	return;
+    if (PIGEON_DEBUG) NSLog(@"PIGEON: Received message from: %@",peerID.displayName);
+	NSString *message = [[NSString alloc] initWithData:context encoding:NSUTF8StringEncoding];
+	[self.delegate didReceiveMessage:message fromSender:peerID.displayName];
+    invitationHandler(NO, nil);
+    return;
 }
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
-    if (PIGEON_DEBUG) NSLog(@"PIGEON: Received message from: %@",peerID.displayName);
-	NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	[self.delegate didReceiveMessage:message fromSender:peerID.displayName];
+    
 }
 
 - (void)tryToReconnect {
-    NSLog(@"Checking for dropped connections...");
-    for (MCPeerID* visiblePeer in self.visiblePeers) {
-        if (![self.session.connectedPeers containsObject:visiblePeer]) {
-            NSLog(@"Connection dropped with: %@, Reconnecting...",visiblePeer.displayName);
-            [self.browser invitePeer:visiblePeer toSession:self.session withContext:nil timeout:3.0];
-        }
-    }
+//    NSLog(@"Checking for dropped connections...");
+//    for (MCPeerID* visiblePeer in self.visiblePeers) {
+//        if (![self.session.connectedPeers containsObject:visiblePeer]) {
+//            NSLog(@"Connection dropped with: %@, Reconnecting...",visiblePeer.displayName);
+//            [self.browser invitePeer:visiblePeer toSession:self.session withContext:nil timeout:3.0];
+//        }
+//    }
 }
 
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state {
-	if (state == MCSessionStateConnected) {
-		if (PIGEON_DEBUG) NSLog(@"PIGEON: Connected: %@",peerID.displayName);
-		[self.peerNames addObject:peerID.displayName];
-		[self.delegate networkChange:self.peerNames];
-	} else if (state == MCSessionStateNotConnected) {
-		if (PIGEON_DEBUG) NSLog(@"PIGEON: Disconnected: %@",peerID.displayName);
-		[self.peerNames removeObject:peerID.displayName];
-		[self.delegate networkChange:self.peerNames];
-        [self tryToReconnect];
-	} else {
-		if (PIGEON_DEBUG) NSLog(@"PIGEON: Unknown state change of: %@",peerID.displayName);
-	}
+//	if (state == MCSessionStateConnected) {
+//		if (PIGEON_DEBUG) NSLog(@"PIGEON: Connected: %@",peerID.displayName);
+//		[self.peerNames addObject:peerID.displayName];
+//		[self.delegate networkChange:self.peerNames];
+//	} else if (state == MCSessionStateNotConnected) {
+//		if (PIGEON_DEBUG) NSLog(@"PIGEON: Disconnected: %@",peerID.displayName);
+//		[self.peerNames removeObject:peerID.displayName];
+//		[self.delegate networkChange:self.peerNames];
+//        [self tryToReconnect];
+//	} else {
+//		if (PIGEON_DEBUG) NSLog(@"PIGEON: Unknown state change of: %@",peerID.displayName);
+//	}
 }
 
 - (void)connectToNetwork:(NSString*) displayName{
@@ -87,7 +85,6 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 								  securityIdentity:nil
 							  encryptionPreference:MCEncryptionNone];
 	self.session.delegate = self;
-	[self.browser invitePeer:self.peerID toSession:self.session withContext:nil timeout:3.0];
     
     // Broadcast Peer
     self.advertiser =
@@ -117,10 +114,11 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info {
-	if (!([self.visiblePeers containsObject:peerID] || [self.session.connectedPeers containsObject:peerID])) {
-        if (PIGEON_DEBUG) NSLog(@"PIGEON: Found peer, inviting: %@",peerID.displayName);
+	if (![self.visiblePeers containsObject:peerID]) {
+        if (PIGEON_DEBUG) NSLog(@"PIGEON: Found peer: %@",peerID.displayName);
         [self.visiblePeers addObject:peerID];
-        [self.browser invitePeer:peerID toSession:self.session withContext:nil timeout:3.0];
+        [self.peerNames addObject:peerID.displayName];
+        [self.delegate networkChange:self.peerNames];
     }
 }
 
@@ -128,6 +126,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 	if (PIGEON_DEBUG) NSLog(@"PIGEON: Lost peer: %@",peerID.displayName);
 	[self.peerNames removeObject:peerID.displayName];
     [self.visiblePeers removeObject:peerID];
+    [self.delegate networkChange:self.peerNames];
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error {
@@ -137,19 +136,12 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 
 - (BOOL)sendMessage:(NSString *)message targetName:(NSString *)targetName {
     // Try to send message
-	for (MCPeerID* peer in self.session.connectedPeers) {
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+	for (MCPeerID* peer in self.visiblePeers) {
         if ([targetName isEqualToString:peer.displayName]) {
-            NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *error = nil;
-            NSArray *target = @[peer];
-            [self.session sendData:data toPeers:target withMode:MCSessionSendDataReliable error:&error];
-            if (error) {
-				if (PIGEON_DEBUG) NSLog(@"PIGEON: An error occured while sending message");
-                return NO;
-            } else {
-				if (PIGEON_DEBUG) NSLog(@"PIGEON: Message sent");
-                return YES;
-            }
+            if (PIGEON_DEBUG) NSLog(@"PIGEON: Message sent");
+            [self.browser invitePeer:peer toSession:self.session withContext:data timeout:3.0];
+            return YES;
         }
     }
 	if (PIGEON_DEBUG) NSLog(@"PIGEON: Target not connected");
@@ -159,15 +151,17 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 - (BOOL)broadcastMessage:(NSString *)message {
     // Try to send message
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
-    [self.session sendData:data toPeers:self.session.connectedPeers withMode:MCSessionSendDataReliable error:&error];
-    if (error) {
-        if (PIGEON_DEBUG) NSLog(@"PIGEON: An error occured while broadcasting message");
-        return NO;
-    } else {
-        if (PIGEON_DEBUG) NSLog(@"PIGEON: Message broadcasted");
-        return YES;
+    BOOL success = NO;
+	for (MCPeerID* peer in self.visiblePeers) {
+        success = YES;
+        [self.browser invitePeer:peer toSession:self.session withContext:data timeout:3.0];
     }
+	if (success) {
+        if (PIGEON_DEBUG) NSLog(@"PIGEON: Message broadcasted");
+    } else {
+        if (PIGEON_DEBUG) NSLog(@"PIGEON: No peers connected");
+    }
+	return success;
 }
 
 - (void) disconnect {
