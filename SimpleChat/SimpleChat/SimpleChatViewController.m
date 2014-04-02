@@ -46,7 +46,7 @@
     
 }
 
-- (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender {
+- (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender rawData:(NSData *)data{
 	NSLog(@"Received Message: %@",message);
     [self.chat storeChatMessage:message withUser:sender];
     [self.tableView reloadData];
@@ -66,7 +66,7 @@
 
 - (IBAction)sendButtonPressed:(UIButton *)sender {
 	[self.chat storeChatMessage:self.messageField.text withUser:USERNAME];
-    [self.pigeon broadcastMessage:self.messageField.text];
+    [self.pigeon broadcastMessage:self.messageField.text raw:nil];
 	self.messageField.text = @"";
 	[self.tableView reloadData];
 }
@@ -75,7 +75,7 @@
 	if (textField.tag == MESSAGE_FIELD_TAG) {
 		// Send
 		[self.chat storeChatMessage:textField.text withUser:USERNAME];
-        [self.pigeon broadcastMessage:self.messageField.text];
+        [self.pigeon broadcastMessage:self.messageField.text raw:nil];
 		textField.text = @"";
 		[self.tableView reloadData];
 		return YES;
@@ -111,7 +111,6 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
 	if (cell == nil) {
-		NSLog(@"new cell");
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
 									  reuseIdentifier:CELL_IDENTIFIER];
 	}

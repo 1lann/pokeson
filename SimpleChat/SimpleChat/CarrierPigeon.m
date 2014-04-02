@@ -42,7 +42,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 {
     if (PIGEON_DEBUG) NSLog(@"PIGEON: Received message from: %@",peerID.displayName);
 	NSString *message = [[NSString alloc] initWithData:context encoding:NSUTF8StringEncoding];
-	[self.delegate didReceiveMessage:message fromSender:peerID.displayName];
+	[self.delegate didReceiveMessage:message fromSender:peerID.displayName rawData:context];
     invitationHandler(NO, nil);
     return;
 }
@@ -134,9 +134,14 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
     [self.delegate networkError:error];
 }
 
-- (BOOL)sendMessage:(NSString *)message targetName:(NSString *)targetName {
+- (BOOL)sendMessage:(NSString *)message targetName:(NSString *)targetName raw:(NSData *)raw{
     // Try to send message
-    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data;
+    if (message) {
+        data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    } else {
+        data = raw;
+    }
 	for (MCPeerID* peer in self.visiblePeers) {
         if ([targetName isEqualToString:peer.displayName]) {
             if (PIGEON_DEBUG) NSLog(@"PIGEON: Message sent");
@@ -148,9 +153,14 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 	return NO;
 }
 
-- (BOOL)broadcastMessage:(NSString *)message {
+- (BOOL)broadcastMessage:(NSString *)message raw:(NSData *)raw{
     // Try to send message
-    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data;
+    if (message) {
+        data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    } else {
+        data = raw;
+    }
     BOOL success = NO;
 	for (MCPeerID* peer in self.visiblePeers) {
         success = YES;
