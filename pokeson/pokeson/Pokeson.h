@@ -18,4 +18,6 @@
 @property UIImage* image;
 @property NSString* name;
 
+- (id)initWithName:(NSString*)name;
+
 @end

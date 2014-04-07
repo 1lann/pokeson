@@ -7,8 +7,11 @@
 //
 
 #import "PokesonPickerViewController.h"
+#define CELL_ID @"collectionCell"
 
 @interface PokesonPickerViewController ()
+
+@property PokesonManager* pokesonManager;
 
 @end
 
@@ -40,8 +43,22 @@
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    
+    return 1;
 }
 
-- (NSInteger)numberOfItemsInSection
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[self.pokesonManager getAllPokesons] count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+    
+    [label setTextColor:[UIColor blackColor]];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setFont:[UIFont fontWithName: @"Helvetica Neue" size: 14.0f]];
+    [cell.contentView addSubview:label];
+    return cell;
+}
+
 @end

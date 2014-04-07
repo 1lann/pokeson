@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PokesonManager.h"
 
 @interface PokesonPickerViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate>
 
