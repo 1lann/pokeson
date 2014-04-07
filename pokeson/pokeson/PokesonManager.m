@@ -10,7 +10,7 @@
 
 @interface PokesonManager ()
 
-@property (readwrite) NSMutableArray* pokesons;
+@property NSMutableArray* allPokesons;
 
 @end
 
@@ -21,14 +21,19 @@
 {
     self = [super init];
     if (self) {
-        self.pokesons = [[NSMutableArray alloc] init];
+        self.allPokesons = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)createPokesonWithName:(NSString *)name {
-	Pokeson *newPokeson = [[Pokeson alloc] initWithName:name];
-	[self.pokesons addObject:newPokeson];
+- (Pokeson*)newPokesonWithName:(NSString *)name {
+    Pokeson* newPokeson = [[Pokeson alloc] initWithName:name];
+    [self.allPokesons addObject:newPokeson];
+    return newPokeson;
+}
+
+- (NSArray*)getAllPokesons {
+    return [self.allPokesons copy];
 }
 
 @end

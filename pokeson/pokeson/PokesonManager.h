@@ -11,7 +11,8 @@
 
 @interface PokesonManager : NSObject
 
-@property (readonly) NSMutableArray* pokesons;
+- (NSArray*)getAllPokesons;
+- (Pokeson*)newPokesonWithName:(NSString*)name;
 
 - (void)createPokesonWithName:(NSString*) name;
 
