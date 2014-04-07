@@ -18,7 +18,12 @@
         self.energy = 1.0;
         self.healthState = 5;
         self.sleepProgress = 0;
+		self.dead = NO;
         self.level = 1;
+		self.disease = NULL;
+		self.activePokeson = NULL;
+		self.medicine = NULL;
+		
         self.species = @"Pikachuie";
     }
     return self;
@@ -49,15 +54,4 @@
     }
 }
 
-- (BOOL)giveMedicine:(NSInteger)strength {
-    if (self.healthState < 5) {
-        self.healthState =+ strength;
-        if (self.healthState > 5) {
-            self.healthState = 5;
-        }
-        return YES;
-    } else {
-        return NO;
-    }
-}
 @end

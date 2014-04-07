@@ -8,6 +8,27 @@
 
 #import "PokesonManager.h"
 
+@interface PokesonManager ()
+
+@property (readwrite) NSMutableArray* pokesons;
+
+@end
+
+
 @implementation PokesonManager
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.pokesons = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (void)createPokesonWithName:(NSString *)name {
+	Pokeson *newPokeson = [[Pokeson alloc] initWithName:name];
+	[self.pokesons addObject:newPokeson];
+}
 
 @end

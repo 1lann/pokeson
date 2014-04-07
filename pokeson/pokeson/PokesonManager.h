@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Pokeson.h"
 
 @interface PokesonManager : NSObject
+
+@property (readonly) NSMutableArray* pokesons;
+
+- (void)createPokesonWithName:(NSString*) name;
 
 @end

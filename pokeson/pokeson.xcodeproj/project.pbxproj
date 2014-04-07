@@ -24,6 +24,8 @@
 		96369A7518D52C6800CD66EC /* Town.m in Sources */ = {isa = PBXBuildFile; fileRef = 96369A7418D52C6800CD66EC /* Town.m */; };
 		9650C6B818E8500A00927D80 /* PokesonPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650C6B718E8500A00927D80 /* PokesonPickerViewController.m */; };
 		9650C6BB18E8592700927D80 /* Pokeson.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650C6BA18E8592700927D80 /* Pokeson.m */; };
+		968536E718F162BF00D19467 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 968536E618F162BF00D19467 /* Medicine.m */; };
+		968536EA18F1630C00D19467 /* ActivePokeson.m in Sources */ = {isa = PBXBuildFile; fileRef = 968536E918F1630C00D19467 /* ActivePokeson.m */; };
 		96BC46E418CC5ACA003119ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E318CC5ACA003119ED /* Foundation.framework */; };
 		96BC46E618CC5ACA003119ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E518CC5ACA003119ED /* CoreGraphics.framework */; };
 		96BC46E818CC5ACA003119ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BC46E718CC5ACA003119ED /* UIKit.framework */; };
@@ -87,6 +89,10 @@
 		9650C6B718E8500A00927D80 /* PokesonPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokesonPickerViewController.m; sourceTree = "<group>"; };
 		9650C6B918E8592700927D80 /* Pokeson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokeson.h; sourceTree = "<group>"; };
 		9650C6BA18E8592700927D80 /* Pokeson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokeson.m; sourceTree = "<group>"; };
+		968536E518F162BF00D19467 /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Medicine.h; sourceTree = "<group>"; };
+		968536E618F162BF00D19467 /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Medicine.m; sourceTree = "<group>"; };
+		968536E818F1630C00D19467 /* ActivePokeson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivePokeson.h; sourceTree = "<group>"; };
+		968536E918F1630C00D19467 /* ActivePokeson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivePokeson.m; sourceTree = "<group>"; };
 		96BC46E018CC5ACA003119ED /* pokeson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokeson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BC46E318CC5ACA003119ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96BC46E518CC5ACA003119ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +146,8 @@
 			children = (
 				9650C6B918E8592700927D80 /* Pokeson.h */,
 				9650C6BA18E8592700927D80 /* Pokeson.m */,
+				968536E818F1630C00D19467 /* ActivePokeson.h */,
+				968536E918F1630C00D19467 /* ActivePokeson.m */,
 				2AF1393818E926AC009280BC /* PokesonManager.h */,
 				2AF1393918E926AC009280BC /* PokesonManager.m */,
 			);
@@ -164,6 +172,8 @@
 		2AF1395818E92B1F009280BC /* Diseases and Medicine */ = {
 			isa = PBXGroup;
 			children = (
+				968536E518F162BF00D19467 /* Medicine.h */,
+				968536E618F162BF00D19467 /* Medicine.m */,
 				2AF1394A18E92AA1009280BC /* Disease.h */,
 				2AF1394B18E92AA1009280BC /* Disease.m */,
 				2AF1394D18E92AB4009280BC /* ResearchManager.h */,
@@ -387,6 +397,7 @@
 				2AF1394318E927CB009280BC /* MedicineManager.m in Sources */,
 				2AF1393A18E926AC009280BC /* PokesonManager.m in Sources */,
 				2AF1393D18E926FB009280BC /* PlayerInventoryManager.m in Sources */,
+				968536E718F162BF00D19467 /* Medicine.m in Sources */,
 				96BC471D18CC5C13003119ED /* MultiProgressView.m in Sources */,
 				2AF1393718E92696009280BC /* Player.m in Sources */,
 				96BC46F018CC5ACA003119ED /* main.m in Sources */,
@@ -396,6 +407,7 @@
 				96BC46FD18CC5ACA003119ED /* PokesonViewController.m in Sources */,
 				96369A7218D52C3E00CD66EC /* Building.m in Sources */,
 				2AF1395518E92AE2009280BC /* DayManager.m in Sources */,
+				968536EA18F1630C00D19467 /* ActivePokeson.m in Sources */,
 				9650C6B818E8500A00927D80 /* PokesonPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

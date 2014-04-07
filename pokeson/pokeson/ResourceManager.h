@@ -10,4 +10,9 @@
 
 @interface ResourceManager : NSObject
 
+@property (readonly) NSInteger resources;
+
+- (BOOL)canChangeResource:(NSInteger) amount;
+- (BOOL)changeResource:(NSInteger) amount;
+
 @end
