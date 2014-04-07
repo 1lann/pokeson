@@ -31,7 +31,6 @@
 	[self.tableView addGestureRecognizer:tap];
 	self.pigeon = [[CarrierPigeon alloc] init];
     self.pigeon.delegate = self;
-	[self.pigeon connectToNetwork:USERNAME];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,10 +45,8 @@
     
 }
 
-- (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender rawData:(NSData *)data{
-	NSLog(@"Received Message: %@",message);
-    [self.chat storeChatMessage:message withUser:sender];
-    [self.tableView reloadData];
+- (void)didReceiveData:(NSData *)data fromSender:(NSString *)sender {
+	
 }
 
 - (void)networkChange:(NSArray *)peerNames {

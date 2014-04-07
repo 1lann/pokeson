@@ -12,7 +12,7 @@
 
 @protocol CarrierPigeonDelegate <NSObject>
 
-- (void)didReceiveMessage:(NSString *)message fromSender:(NSString *)sender rawData:(NSData *)data;
+- (void)didReceiveData:(NSData *)data fromSender:(NSString *)sender;
 - (void)networkChange:(NSArray*)peerNames;
 - (void)networkError:(NSError*)error;
 
@@ -20,12 +20,14 @@
 
 @interface CarrierPigeon : NSObject <MCNearbyServiceAdvertiserDelegate, MCSessionDelegate, MCNearbyServiceBrowserDelegate>
 
+@property (readonly) NSMutableArray* peerNames;
+@property (readonly) BOOL visible;
 
 @property (nonatomic, assign) id <CarrierPigeonDelegate> delegate;
 
-- (BOOL)broadcastMessage:(NSString *)message raw:(NSData*)raw;
-- (BOOL)sendMessage:(NSString *)message targetName:(NSString*)targetName raw:(NSData*)raw;
-- (void)connectToNetwork:(NSString *)displayName;
+- (BOOL)broadcastData:(NSData *)data;
+- (BOOL)sendData:(NSData *)data targetName:(NSString*)targetName;
+- (void)connectToNetworkWithName:(NSString *)displayName visible:(BOOL)visible;
 - (void)disconnect;
 
 @end

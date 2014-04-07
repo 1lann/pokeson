@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A03060418EC073B00AF0757 /* RadarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A03060318EC073B00AF0757 /* RadarViewController.m */; };
-		2A03060718EC076100AF0757 /* RemotePokesonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A03060618EC076100AF0757 /* RemotePokesonViewController.m */; };
 		9601AD7718D72728000CEF3A /* CarrierPigeon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601AD7618D72728000CEF3A /* CarrierPigeon.m */; };
+		9637EF1F18F2E2E8001E15F9 /* PigeonHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9637EF1E18F2E2E8001E15F9 /* PigeonHouse.m */; };
 		96503ABC18CF2CBF00D3F9DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96503ABB18CF2CBF00D3F9DC /* Foundation.framework */; };
 		96503ABE18CF2CBF00D3F9DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96503ABD18CF2CBF00D3F9DC /* CoreGraphics.framework */; };
 		96503AC018CF2CBF00D3F9DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96503ABF18CF2CBF00D3F9DC /* UIKit.framework */; };
@@ -39,12 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A03060218EC073B00AF0757 /* RadarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarViewController.h; sourceTree = "<group>"; };
-		2A03060318EC073B00AF0757 /* RadarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarViewController.m; sourceTree = "<group>"; };
-		2A03060518EC076100AF0757 /* RemotePokesonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemotePokesonViewController.h; sourceTree = "<group>"; };
-		2A03060618EC076100AF0757 /* RemotePokesonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemotePokesonViewController.m; sourceTree = "<group>"; };
 		9601AD7518D72728000CEF3A /* CarrierPigeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarrierPigeon.h; sourceTree = "<group>"; };
 		9601AD7618D72728000CEF3A /* CarrierPigeon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarrierPigeon.m; sourceTree = "<group>"; };
+		9637EF1D18F2E2E7001E15F9 /* PigeonHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PigeonHouse.h; sourceTree = "<group>"; };
+		9637EF1E18F2E2E8001E15F9 /* PigeonHouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PigeonHouse.m; sourceTree = "<group>"; };
 		96503AB818CF2CBF00D3F9DC /* SimpleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96503ABB18CF2CBF00D3F9DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96503ABD18CF2CBF00D3F9DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,12 +125,10 @@
 			children = (
 				96503ACD18CF2CC000D3F9DC /* Main_iPhone.storyboard */,
 				96503AD018CF2CC000D3F9DC /* Main_iPad.storyboard */,
-				2A03060518EC076100AF0757 /* RemotePokesonViewController.h */,
-				2A03060618EC076100AF0757 /* RemotePokesonViewController.m */,
-				2A03060218EC073B00AF0757 /* RadarViewController.h */,
-				2A03060318EC073B00AF0757 /* RadarViewController.m */,
 				96503AF318CF300C00D3F9DC /* ChatManager.h */,
 				96503AF418CF300C00D3F9DC /* ChatManager.m */,
+				9637EF1D18F2E2E7001E15F9 /* PigeonHouse.h */,
+				9637EF1E18F2E2E8001E15F9 /* PigeonHouse.m */,
 				9601AD7518D72728000CEF3A /* CarrierPigeon.h */,
 				9601AD7618D72728000CEF3A /* CarrierPigeon.m */,
 				96503ACA18CF2CC000D3F9DC /* SimpleChatAppDelegate.h */,
@@ -274,13 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9637EF1F18F2E2E8001E15F9 /* PigeonHouse.m in Sources */,
 				96503ACC18CF2CC000D3F9DC /* SimpleChatAppDelegate.m in Sources */,
 				9601AD7718D72728000CEF3A /* CarrierPigeon.m in Sources */,
-				2A03060718EC076100AF0757 /* RemotePokesonViewController.m in Sources */,
 				96503AC818CF2CC000D3F9DC /* main.m in Sources */,
 				96503AD518CF2CC000D3F9DC /* SimpleChatViewController.m in Sources */,
 				96503AF518CF300C00D3F9DC /* ChatManager.m in Sources */,
-				2A03060418EC073B00AF0757 /* RadarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
