@@ -14,6 +14,4 @@
 - (NSArray*)getAllPokesons;
 - (Pokeson*)newPokesonWithName:(NSString*)name;
 
-- (void)createPokesonWithName:(NSString*) name;
-
 @end
