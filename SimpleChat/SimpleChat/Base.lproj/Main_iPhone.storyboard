@@ -111,10 +111,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hJv-WI-K51">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="radarCell" id="hJv-WI-K51">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJv-WI-K51">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJv-WI-K51" id="Awc-G0-gid">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -131,7 +131,7 @@
                     <navigationItem key="navigationItem" title="Radar" id="Tpj-N6-Sd5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="radarView" destination="Ojg-yh-cfI" id="R2W-oD-wdN"/>
+                        <outlet property="tableView" destination="Ojg-yh-cfI" id="Ymf-gf-8lZ"/>
                         <segue destination="z4E-RJ-YMh" kind="push" identifier="loadRemote" id="wR5-CG-Vff"/>
                     </connections>
                 </viewController>
@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="870" y="73"/>
         </scene>
-        <!--Remote Pokeson View Controller-->
+        <!--Pokeson Viewer View Controller-->
         <scene sceneID="mo2-Xp-wrW">
             <objects>
-                <viewController id="z4E-RJ-YMh" customClass="RemotePokesonViewController" sceneMemberID="viewController">
+                <viewController id="z4E-RJ-YMh" customClass="PokesonViewerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ERB-xE-4VT"/>
                         <viewControllerLayoutGuide type="bottom" id="AAg-FP-Ctj"/>
@@ -159,7 +159,7 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="fXU-hW-Mks">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXU-hW-Mks">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXU-hW-Mks" id="56k-aI-yWL">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>

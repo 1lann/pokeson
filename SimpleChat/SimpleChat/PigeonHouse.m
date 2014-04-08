@@ -26,7 +26,10 @@
 }
 
 - (NSArray*)getPeers {
-	return [self.pigeon.peerNames copy];
+    NSArray *wtfIsThisError = @[@"TEST"];
+    [self.delegate networkChange:wtfIsThisError];
+    return wtfIsThisError;
+	//return [self.pigeon.peerNames copy];
 }
 
 - (void)connectToNetworkWithName:(NSString*)name visible:(BOOL)visible {
@@ -56,7 +59,7 @@
 }
 
 - (void)networkChange:(NSArray *)peerNames {
-	[self.delegate networkChange:peerNames];
+    [self.delegate networkChange:peerNames];
 }
 
 - (void)didReceiveData:(NSData *)data fromSender:(NSString *)sender {
@@ -65,7 +68,7 @@
 		if ([[request objectAtIndex:1] isKindOfClass:[NSString class]] &&
 			[[request objectAtIndex:2] isKindOfClass:[NSString class]] &&
 			[[request objectAtIndex:1] isEqualToString:@"request"]) {
-			[self.delegate receivedRequestWithType:[request objectAtIndex:2]];
+			[self.delegate receivedRequestWithType:[request objectAtIndex:2] fromSender:sender];
 		} else if ([request count] >= 3 &&
 				   [[request objectAtIndex:1] isKindOfClass:[NSString class]] &&
 				   [[request objectAtIndex:2] isKindOfClass:[NSString class]] &&

@@ -12,7 +12,7 @@
 @protocol PigeonHouseDelegate <NSObject>
 
 - (void)receivedArrayDataWithType:(NSString *)type data:(NSArray *)data fromSender:(NSString *)sender;
-- (void)receivedRequestWithType:(NSString *)type;
+- (void)receivedRequestWithType:(NSString *)type fromSender:(NSString *)sender;
 - (void)networkChange:(NSArray*)peers;
 - (void)networkError:(NSError*)error;
 

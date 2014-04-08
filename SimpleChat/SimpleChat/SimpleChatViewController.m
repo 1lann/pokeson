@@ -63,7 +63,6 @@
 
 - (IBAction)sendButtonPressed:(UIButton *)sender {
 	[self.chat storeChatMessage:self.messageField.text withUser:USERNAME];
-    [self.pigeon broadcastMessage:self.messageField.text raw:nil];
 	self.messageField.text = @"";
 	[self.tableView reloadData];
 }
@@ -72,7 +71,6 @@
 	if (textField.tag == MESSAGE_FIELD_TAG) {
 		// Send
 		[self.chat storeChatMessage:textField.text withUser:USERNAME];
-        [self.pigeon broadcastMessage:self.messageField.text raw:nil];
 		textField.text = @"";
 		[self.tableView reloadData];
 		return YES;
