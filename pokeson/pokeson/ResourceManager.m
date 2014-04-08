@@ -16,7 +16,7 @@
 
 @implementation ResourceManager
 
-- (BOOL)canChangeResource:(NSInteger)amount {
+- (BOOL)canChargeResource:(NSInteger)amount {
 	if (self.resources-amount >= 0) {
 		self.resources -= amount;
 		return YES;
@@ -25,7 +25,7 @@
 	}
 }
 
-- (BOOL)changeResource:(NSInteger)amount {
+- (BOOL)chargeResource:(NSInteger)amount {
 	if (self.resources-amount >= 0) {
 		return YES;
 	} else {

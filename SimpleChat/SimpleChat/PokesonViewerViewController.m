@@ -1,22 +1,22 @@
 //
-//  RadarViewController.m
+//  PokesonViewerViewController.m
 //  SimpleChat
 //
 //  Created by Jason Chu on 4/8/14.
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
-#import "RadarViewController.h"
 #import "PokesonViewerViewController.h"
-#define CELL_ID @"radarCell"
+#define CELL_ID @"viewerCell"
 
-@interface RadarViewController ()
+@interface PokesonViewerViewController ()
 
-@property PigeonHouse* pigeonHouse;
+@property NSMutableArray* listOfPokesons;
+@property id previousDelegate;
 
 @end
 
-@implementation RadarViewController
+@implementation PokesonViewerViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +31,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.pigeonHouse = [[PigeonHouse alloc] init];
-    self.pigeonHouse.delegate = self;
+	self.previousDelegate = self.pigeonHouse.delegate;
+	self.pigeonHouse.delegate = self;
+	self.listOfPokesons = [[NSMutableArray alloc] init];
+	[self.pigeonHouse requestDataWithType:@"list" targetName:self.targetName];
+	self.navigationController.topViewController.title = self.targetName;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.pigeonHouse getPeers] count];
+    return [self.listOfPokesons count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,42 +59,39 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
 									  reuseIdentifier:CELL_ID];
 	}
-    cell.textLabel.text = [[self.pigeonHouse getPeers] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.listOfPokesons objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"listPokeson" sender:self];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([[segue identifier] isEqualToString:@"listPokeson"]){
-        NSIndexPath *selectedRow = [[self tableView] indexPathForSelectedRow];
-        PokesonViewerViewController *vc = [segue destinationViewController];
-		vc.pigeonHouse = self.pigeonHouse;
-		vc.targetName = [[self.pigeonHouse getPeers] objectAtIndex:selectedRow.row];
-        [self.tableView deselectRowAtIndexPath:selectedRow animated:YES];
-    }
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)networkChange:(NSArray *)peers {
-    [self.tableView reloadData];
+	
 }
 
 - (void)receivedArrayDataWithType:(NSString *)type data:(NSArray *)data fromSender:(NSString *)sender {
-    
+	if ([type isEqualToString:@"list"]) {
+		self.listOfPokesons = [data mutableCopy];
+		[self.tableView reloadData];
+	}
 }
 
 - (void)receivedRequestWithType:(NSString *)type fromSender:(NSString *)sender {
-#warning Not implemented correctly. TODO
-    if ([type isEqualToString:@"list"]) {
-        NSArray* array = @[@"Chuie",@"Ben",@"Hector",@"Pizz"];
-        [self.pigeonHouse respondWithData:array type:type targetName:sender];
-    }
+ // #warning TODO: Implement in the future
 }
 
 - (void)networkError:(NSError *)error {
-    
+	
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        self.pigeonHouse.delegate = self.previousDelegate;
+        [self.navigationController popViewControllerAnimated:NO];
+    }
+    [super viewWillDisappear:animated];
 }
 
 @end

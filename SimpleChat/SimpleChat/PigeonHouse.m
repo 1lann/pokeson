@@ -26,10 +26,11 @@
 }
 
 - (NSArray*)getPeers {
-    NSArray *wtfIsThisError = @[@"TEST"];
-    [self.delegate networkChange:wtfIsThisError];
-    return wtfIsThisError;
-	//return [self.pigeon.peerNames copy];
+	// TODO: currently demo code
+    if ([self.pigeon.peerNames count] <= 0) {
+		[self.pigeon.peerNames addObject:@"Test"];
+	}
+	return [self.pigeon.peerNames copy];
 }
 
 - (void)connectToNetworkWithName:(NSString*)name visible:(BOOL)visible {
@@ -41,11 +42,16 @@
 }
 
 - (BOOL)requestDataWithType:(NSString *)type targetName:(NSString*)targetName {
-	NSMutableArray* request = [[NSMutableArray alloc] init];
-	[request addObject:@"request"];
-	[request addObject:type];
-	NSData* data = [NSKeyedArchiver archivedDataWithRootObject:request];
-	return [self.pigeon sendData:data targetName:targetName];
+	// TODO: currently dummy code
+	if ([type isEqualToString:@"list"]) {
+		[self.delegate receivedArrayDataWithType:@"list" data:@[@"Chuie",@"Ben",@"Hector",@"Pizz"] fromSender:targetName];
+	}
+	return YES;
+//	NSMutableArray* request = [[NSMutableArray alloc] init];
+//	[request addObject:@"request"];
+//	[request addObject:type];
+//	NSData* data = [NSKeyedArchiver archivedDataWithRootObject:request];
+//	return [self.pigeon sendData:data targetName:targetName];
 }
 
 - (BOOL)respondWithData:(NSArray *)data type:(NSString *)type targetName:(NSString *)targetName {

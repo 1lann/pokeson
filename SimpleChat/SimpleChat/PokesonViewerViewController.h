@@ -1,5 +1,5 @@
 //
-//  RadarViewController.h
+//  PokesonViewerViewController.h
 //  SimpleChat
 //
 //  Created by Jason Chu on 4/8/14.
@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "PigeonHouse.h"
 
-@interface RadarViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, PigeonHouseDelegate>
+@interface PokesonViewerViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, PigeonHouseDelegate>
+
+@property PigeonHouse* pigeonHouse;
+@property NSString* targetName;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

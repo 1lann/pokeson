@@ -12,7 +12,7 @@
 
 @property (readonly) NSInteger resources;
 
-- (BOOL)canChangeResource:(NSInteger) amount;
-- (BOOL)changeResource:(NSInteger) amount;
+- (BOOL)canChargeResource:(NSInteger) amount;
+- (BOOL)chargeResource:(NSInteger) amount;
 
 @end

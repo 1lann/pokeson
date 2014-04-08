@@ -132,7 +132,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Ojg-yh-cfI" id="Ymf-gf-8lZ"/>
-                        <segue destination="z4E-RJ-YMh" kind="push" identifier="loadRemote" id="wR5-CG-Vff"/>
+                        <segue destination="z4E-RJ-YMh" kind="push" identifier="listPokeson" id="wR5-CG-Vff"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh6-3p-Vcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +156,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="fXU-hW-Mks">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="viewerCell" id="fXU-hW-Mks">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXU-hW-Mks" id="56k-aI-yWL">
@@ -176,6 +176,7 @@
                     <navigationItem key="navigationItem" id="a7u-9H-Bz6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="tableView" destination="efC-BI-U5w" id="9D6-Cw-MdL"/>
                         <segue destination="Qra-HN-WTQ" kind="unwind" unwindAction="unwindToRadar:" id="JXX-AD-xnX"/>
                         <segue destination="Qra-HN-WTQ" kind="unwind" unwindAction="unwindToRadar:" id="Hia-1W-ocH"/>
                     </connections>

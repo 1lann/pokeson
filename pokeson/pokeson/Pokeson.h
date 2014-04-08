@@ -21,11 +21,12 @@
 @property Disease* disease;
 @property Medicine* medicine;
 @property ActivePokeson* activePokeson;
+@property UIColor* color;
 @property NSString* species;
 @property UIImage* image;
 @property NSString* name;
 
-- (id)initWithName:(NSString*) name;
+- (id)initWithName:(NSString*) name color:(UIColor*)color;
 
 
 @end

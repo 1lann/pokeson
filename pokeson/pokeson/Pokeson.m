@@ -10,7 +10,7 @@
 
 @implementation Pokeson
 
-- (id)initWithName:(NSString*)name
+- (id)initWithName:(NSString*)name color:(UIColor*)color
 {
     self = [super init];
     if (self) {
@@ -23,7 +23,8 @@
 		self.disease = NULL;
 		self.activePokeson = NULL;
 		self.medicine = NULL;
-		
+		self.color = color;
+
         self.species = @"Pikachuie";
     }
     return self;

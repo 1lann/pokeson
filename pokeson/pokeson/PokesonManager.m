@@ -10,7 +10,7 @@
 
 @interface PokesonManager ()
 
-@property NSMutableArray* allPokesons;
+@property (readwrite) NSMutableArray* allPokesons;
 
 @end
 
@@ -26,14 +26,10 @@
     return self;
 }
 
-- (Pokeson*)newPokesonWithName:(NSString *)name {
-    Pokeson* newPokeson = [[Pokeson alloc] initWithName:name];
+- (Pokeson*)newPokesonWithName:(NSString *)name color:(UIColor *)color{
+    Pokeson* newPokeson = [[Pokeson alloc] initWithName:name color:color];
     [self.allPokesons addObject:newPokeson];
     return newPokeson;
-}
-
-- (NSArray*)getAllPokesons {
-    return [self.allPokesons copy];
 }
 
 @end

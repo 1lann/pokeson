@@ -34,6 +34,11 @@
     self.navigationController.navigationBar.translucent = NO;
 	self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 	[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+	self.pokesonManager = [[PokesonManager alloc] init];
+	[self.pokesonManager newPokesonWithName:@"Pikachuie" color:[UIColor yellowColor]];
+	[self.pokesonManager newPokesonWithName:@"Nandos" color:[UIColor redColor]];
+	[self.pokesonManager newPokesonWithName:@"Wood" color:[UIColor brownColor]];
+	[self.pokesonManager newPokesonWithName:@"Grass" color:[UIColor greenColor]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,16 +52,23 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[self.pokesonManager getAllPokesons] count];
+    return [self.pokesonManager.allPokesons count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     
     [label setTextColor:[UIColor blackColor]];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont fontWithName: @"Helvetica Neue" size: 14.0f]];
+	[label setTextAlignment:NSTextAlignmentCenter];
+    [label setFont:[UIFont fontWithName: @"HelveticaNeue-CondensedBold" size: 45.0f]];
+	Pokeson* pokeson = [self.pokesonManager.allPokesons objectAtIndex:indexPath.row];
+	UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+	bgView.backgroundColor = pokeson.color;
+	NSString* name = [pokeson.name substringWithRange:NSMakeRange(0, 4)];
+	[label setText:name];
+	[cell.contentView addSubview:bgView];
     [cell.contentView addSubview:label];
     return cell;
 }
