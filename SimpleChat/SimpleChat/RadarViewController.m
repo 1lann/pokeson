@@ -71,6 +71,7 @@
         PokesonViewerViewController *vc = [segue destinationViewController];
 		vc.pigeonHouse = self.pigeonHouse;
 		vc.targetName = [[self.pigeonHouse getPeers] objectAtIndex:selectedRow.row];
+        vc.callbackFunc = ^void() {[self.tableView reloadData];};
         [self.tableView deselectRowAtIndexPath:selectedRow animated:YES];
     }
 }
@@ -86,7 +87,7 @@
 - (void)receivedRequestWithType:(NSString *)type fromSender:(NSString *)sender {
 #warning Not implemented correctly. TODO
     if ([type isEqualToString:@"list"]) {
-        NSArray* array = @[@"Chuie",@"Ben",@"Hector",@"Pizz"];
+        NSArray* array = @[@"Test",@"Josh",@"Test monster",@"MissingNO."];
         [self.pigeonHouse respondWithData:array type:type targetName:sender];
     }
 }

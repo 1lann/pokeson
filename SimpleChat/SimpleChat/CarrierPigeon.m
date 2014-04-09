@@ -19,6 +19,7 @@
 @property (readwrite) MCNearbyServiceBrowser* browser;
 @property (readwrite) NSMutableArray* peerNames;
 @property (readwrite) MCSession* session;
+@property (readwrite) NSMutableArray* hiddenPeers;
 @property (readwrite) BOOL visible;
 @property NSMutableArray* visiblePeers;
 
@@ -32,6 +33,7 @@
     if (self) {
 		self.visiblePeers = [[NSMutableArray alloc] init];
 		self.peerNames = [[NSMutableArray alloc] init];
+        self.hiddenPeers = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -114,7 +116,8 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info {
-	if (self.visible && ![self.visiblePeers containsObject:peerID]) {
+    [self.hiddenPeers addObject:peerID];
+	if (self.visible) {
         if (PIGEON_DEBUG) NSLog(@"PIGEON: Found peer, pinging: %@",peerID.displayName);
 		NSData *data = [@"visible" dataUsingEncoding:NSUTF8StringEncoding];
         [self.browser invitePeer:peerID toSession:self.session withContext:data timeout:3.0];
@@ -123,6 +126,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 
 - (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID {
 	if (PIGEON_DEBUG) NSLog(@"PIGEON: Lost peer: %@",peerID.displayName);
+    [self.hiddenPeers removeObject:peerID];
 	[self.peerNames removeObject:peerID.displayName];
     [self.visiblePeers removeObject:peerID];
     [self.delegate networkChange:self.peerNames];
@@ -135,7 +139,7 @@ didReceiveInvitationFromPeer:(MCPeerID *)peerID
 
 - (BOOL)sendData:(NSData *)data targetName:(NSString *)targetName{
     // Try to send message
-	for (MCPeerID* peer in self.visiblePeers) {
+	for (MCPeerID* peer in self.hiddenPeers) {
         if ([targetName isEqualToString:peer.displayName]) {
             if (PIGEON_DEBUG) NSLog(@"PIGEON: Message sent");
             [self.browser invitePeer:peer toSession:self.session withContext:data timeout:3.0];
