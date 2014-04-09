@@ -33,6 +33,8 @@
 	// Do any additional setup after loading the view.
     self.pigeonHouse = [[PigeonHouse alloc] init];
     self.pigeonHouse.delegate = self;
+#warning TODO: Change this later
+    [self.pigeonHouse connectToNetworkWithName:@"Chuie" visible:YES];
 }
 
 - (void)didReceiveMemoryWarning

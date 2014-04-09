@@ -79,7 +79,11 @@
 }
 
 - (void)receivedRequestWithType:(NSString *)type fromSender:(NSString *)sender {
- // #warning TODO: Implement in the future
+ #warning TODO: Implement in the future
+    if ([type isEqualToString:@"list"]) {
+        NSArray* array = @[@"Chuie",@"Ben",@"Hector",@"Pizz"];
+        [self.pigeonHouse respondWithData:array type:type targetName:sender];
+    }
 }
 
 - (void)networkError:(NSError *)error {
