@@ -14,5 +14,6 @@
 @property PigeonHouse* pigeonHouse;
 @property NSString* targetName;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, copy) void (^callbackFunc)();
 
 @end

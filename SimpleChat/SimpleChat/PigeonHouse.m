@@ -21,15 +21,16 @@
     self = [super init];
     if (self) {
         self.pigeon = [[CarrierPigeon alloc] init];
+        self.pigeon.delegate = self;
     }
     return self;
 }
 
 - (NSArray*)getPeers {
 	// TODO: currently demo code
-    if ([self.pigeon.peerNames count] <= 0) {
-		[self.pigeon.peerNames addObject:@"Test"];
-	}
+//    if ([self.pigeon.peerNames count] <= 0) {
+//		[self.pigeon.peerNames addObject:@"Test"];
+//	}
 	return [self.pigeon.peerNames copy];
 }
 
@@ -43,15 +44,15 @@
 
 - (BOOL)requestDataWithType:(NSString *)type targetName:(NSString*)targetName {
 	// TODO: currently dummy code
-	if ([type isEqualToString:@"list"]) {
-		[self.delegate receivedArrayDataWithType:@"list" data:@[@"Chuie",@"Ben",@"Hector",@"Pizz"] fromSender:targetName];
-	}
-	return YES;
-//	NSMutableArray* request = [[NSMutableArray alloc] init];
-//	[request addObject:@"request"];
-//	[request addObject:type];
-//	NSData* data = [NSKeyedArchiver archivedDataWithRootObject:request];
-//	return [self.pigeon sendData:data targetName:targetName];
+//	if ([type isEqualToString:@"list"]) {
+//		[self.delegate receivedArrayDataWithType:@"list" data:@[@"Chuie",@"Ben",@"Hector",@"Pizz"] fromSender:targetName];
+//	}
+//	return YES;
+	NSMutableArray* request = [[NSMutableArray alloc] init];
+	[request addObject:@"request"];
+	[request addObject:type];
+	NSData* data = [NSKeyedArchiver archivedDataWithRootObject:request];
+	return [self.pigeon sendData:data targetName:targetName];
 }
 
 - (BOOL)respondWithData:(NSArray *)data type:(NSString *)type targetName:(NSString *)targetName {
@@ -71,15 +72,15 @@
 - (void)didReceiveData:(NSData *)data fromSender:(NSString *)sender {
 	NSArray* request = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 	if (request && [request count] >= 2) {
-		if ([[request objectAtIndex:1] isKindOfClass:[NSString class]] &&
-			[[request objectAtIndex:2] isKindOfClass:[NSString class]] &&
-			[[request objectAtIndex:1] isEqualToString:@"request"]) {
-			[self.delegate receivedRequestWithType:[request objectAtIndex:2] fromSender:sender];
-		} else if ([request count] >= 3 &&
+		if ([[request objectAtIndex:0] isKindOfClass:[NSString class]] &&
+			[[request objectAtIndex:1] isKindOfClass:[NSString class]] &&
+			[[request objectAtIndex:0] isEqualToString:@"request"]) {
+			[self.delegate receivedRequestWithType:[request objectAtIndex:1] fromSender:sender];
+		} else if (request && [request count] >= 3 &&
+				   [[request objectAtIndex:0] isKindOfClass:[NSString class]] &&
 				   [[request objectAtIndex:1] isKindOfClass:[NSString class]] &&
-				   [[request objectAtIndex:2] isKindOfClass:[NSString class]] &&
-				   [[request objectAtIndex:1] isEqualToString:@"response"]) {
-			[self.delegate receivedArrayDataWithType:[request objectAtIndex:2] data:[request objectAtIndex:3] fromSender:sender];
+				   [[request objectAtIndex:0] isEqualToString:@"response"]) {
+			[self.delegate receivedArrayDataWithType:[request objectAtIndex:1] data:[request objectAtIndex:2] fromSender:sender];
 		} else {
 			NSLog(@"Malformed request");
 		}

@@ -79,7 +79,11 @@
 }
 
 - (void)receivedRequestWithType:(NSString *)type fromSender:(NSString *)sender {
- // #warning TODO: Implement in the future
+ #warning TODO: Implement in the future
+    if ([type isEqualToString:@"list"]) {
+        NSArray* array = @[@"Pikachuie",@"Some other mon",@"Test monster",@"MissingNO."];
+        [self.pigeonHouse respondWithData:array type:type targetName:sender];
+    }
 }
 
 - (void)networkError:(NSError *)error {
@@ -89,6 +93,7 @@
 -(void) viewWillDisappear:(BOOL)animated {
     if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
         self.pigeonHouse.delegate = self.previousDelegate;
+        [self callbackFunc];
         [self.navigationController popViewControllerAnimated:NO];
     }
     [super viewWillDisappear:animated];
