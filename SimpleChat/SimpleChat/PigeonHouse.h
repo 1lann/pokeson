@@ -25,6 +25,8 @@
 - (NSArray*)getPeers;
 - (void)connectToNetworkWithName:(NSString*)name visible:(BOOL)visible;
 - (BOOL)requestDataWithType:(NSString *)type targetName:(NSString *)targetName;
+- (void)setAutoResponseWithType:(NSString *)type response:(NSArray *)response;
+- (void)clearAutoResponseWithType:(NSString *)type;
 - (BOOL)respondWithData:(NSArray *)data type:(NSString *)type targetName:(NSString *)targetName;
 
 @end

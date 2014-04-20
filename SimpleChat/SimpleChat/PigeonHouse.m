@@ -88,4 +88,12 @@
 	}
 }
 
+- (void)setAutoResponseWithType:(NSString *)type response:(NSArray *)response {
+	
+}
+
+- (void)clearAutoResponseWithType:(NSString *)type {
+	
+}
+
 @end
