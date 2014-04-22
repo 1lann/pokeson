@@ -27,6 +27,7 @@
 		96503AE818CF2CC000D3F9DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96503AE618CF2CC000D3F9DC /* InfoPlist.strings */; };
 		96503AEA18CF2CC000D3F9DC /* SimpleChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96503AE918CF2CC000D3F9DC /* SimpleChatTests.m */; };
 		96503AF518CF300C00D3F9DC /* ChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96503AF418CF300C00D3F9DC /* ChatManager.m */; };
+		9687511C1905651E00630C92 /* CarrierPigeonEmulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687511B1905651E00630C92 /* CarrierPigeonEmulator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		96503AE918CF2CC000D3F9DC /* SimpleChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleChatTests.m; sourceTree = "<group>"; };
 		96503AF318CF300C00D3F9DC /* ChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatManager.h; sourceTree = "<group>"; };
 		96503AF418CF300C00D3F9DC /* ChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatManager.m; sourceTree = "<group>"; };
+		9687511A1905651E00630C92 /* CarrierPigeonEmulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarrierPigeonEmulator.h; sourceTree = "<group>"; };
+		9687511B1905651E00630C92 /* CarrierPigeonEmulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarrierPigeonEmulator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +132,8 @@
 		96503AC118CF2CBF00D3F9DC /* SimpleChat */ = {
 			isa = PBXGroup;
 			children = (
+				9687511D190641A500630C92 /* Misc. */,
 				96503ACD18CF2CC000D3F9DC /* Main_iPhone.storyboard */,
-				96503AD018CF2CC000D3F9DC /* Main_iPad.storyboard */,
-				96503AF318CF300C00D3F9DC /* ChatManager.h */,
-				96503AF418CF300C00D3F9DC /* ChatManager.m */,
 				9637EF1D18F2E2E7001E15F9 /* PigeonHouse.h */,
 				9637EF1E18F2E2E8001E15F9 /* PigeonHouse.m */,
 				9637EF2318F43927001E15F9 /* PokesonViewerViewController.h */,
@@ -141,10 +142,8 @@
 				9637EF2618F43927001E15F9 /* RadarViewController.m */,
 				9601AD7518D72728000CEF3A /* CarrierPigeon.h */,
 				9601AD7618D72728000CEF3A /* CarrierPigeon.m */,
-				96503ACA18CF2CC000D3F9DC /* SimpleChatAppDelegate.h */,
-				96503ACB18CF2CC000D3F9DC /* SimpleChatAppDelegate.m */,
-				96503AD318CF2CC000D3F9DC /* SimpleChatViewController.h */,
-				96503AD418CF2CC000D3F9DC /* SimpleChatViewController.m */,
+				9687511A1905651E00630C92 /* CarrierPigeonEmulator.h */,
+				9687511B1905651E00630C92 /* CarrierPigeonEmulator.m */,
 				96503AD618CF2CC000D3F9DC /* Images.xcassets */,
 				96503AC218CF2CBF00D3F9DC /* Supporting Files */,
 			);
@@ -178,6 +177,20 @@
 				96503AE618CF2CC000D3F9DC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9687511D190641A500630C92 /* Misc. */ = {
+			isa = PBXGroup;
+			children = (
+				96503ACA18CF2CC000D3F9DC /* SimpleChatAppDelegate.h */,
+				96503ACB18CF2CC000D3F9DC /* SimpleChatAppDelegate.m */,
+				96503AD318CF2CC000D3F9DC /* SimpleChatViewController.h */,
+				96503AD418CF2CC000D3F9DC /* SimpleChatViewController.m */,
+				96503AD018CF2CC000D3F9DC /* Main_iPad.storyboard */,
+				96503AF318CF300C00D3F9DC /* ChatManager.h */,
+				96503AF418CF300C00D3F9DC /* ChatManager.m */,
+			);
+			name = Misc.;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +296,7 @@
 				9637EF2818F43927001E15F9 /* RadarViewController.m in Sources */,
 				96503ACC18CF2CC000D3F9DC /* SimpleChatAppDelegate.m in Sources */,
 				9637EF2718F43927001E15F9 /* PokesonViewerViewController.m in Sources */,
+				9687511C1905651E00630C92 /* CarrierPigeonEmulator.m in Sources */,
 				9601AD7718D72728000CEF3A /* CarrierPigeon.m in Sources */,
 				96503AC818CF2CC000D3F9DC /* main.m in Sources */,
 				96503AD518CF2CC000D3F9DC /* SimpleChatViewController.m in Sources */,

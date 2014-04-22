@@ -10,7 +10,8 @@
 
 @interface PigeonHouse ()
 
-@property CarrierPigeon* pigeon;
+@property CarrierPigeonEmulator* pigeon;
+@property NSMutableArray* autoResponses;
 
 @end
 
@@ -20,17 +21,14 @@
 {
     self = [super init];
     if (self) {
-        self.pigeon = [[CarrierPigeon alloc] init];
+        self.pigeon = [[CarrierPigeonEmulator alloc] init];
         self.pigeon.delegate = self;
+		self.autoResponses = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (NSArray*)getPeers {
-	// TODO: currently demo code
-//    if ([self.pigeon.peerNames count] <= 0) {
-//		[self.pigeon.peerNames addObject:@"Test"];
-//	}
 	return [self.pigeon.peerNames copy];
 }
 
@@ -72,15 +70,23 @@
 - (void)didReceiveData:(NSData *)data fromSender:(NSString *)sender {
 	NSArray* request = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 	if (request && [request count] >= 2) {
-		if ([[request objectAtIndex:0] isKindOfClass:[NSString class]] &&
-			[[request objectAtIndex:1] isKindOfClass:[NSString class]] &&
-			[[request objectAtIndex:0] isEqualToString:@"request"]) {
-			[self.delegate receivedRequestWithType:[request objectAtIndex:1] fromSender:sender];
+		if ([request[0] isKindOfClass:[NSString class]] &&
+			[request[1] isKindOfClass:[NSString class]] &&
+			[request[0] isEqualToString:@"request"]) {
+			for (NSArray *dataArray in self.autoResponses) {
+				if ([request[1] isEqualToString:dataArray[0]]) {
+					NSArray *responseData = @[@"response", request[1], dataArray[1]];
+					NSData* sendData = [NSKeyedArchiver archivedDataWithRootObject:responseData];
+					[self.pigeon sendData:sendData targetName:sender];
+					return;
+				}
+			}
+			[self.delegate receivedRequestWithType:request[1] fromSender:sender];
 		} else if (request && [request count] >= 3 &&
-				   [[request objectAtIndex:0] isKindOfClass:[NSString class]] &&
-				   [[request objectAtIndex:1] isKindOfClass:[NSString class]] &&
-				   [[request objectAtIndex:0] isEqualToString:@"response"]) {
-			[self.delegate receivedArrayDataWithType:[request objectAtIndex:1] data:[request objectAtIndex:2] fromSender:sender];
+				   [request[0] isKindOfClass:[NSString class]] &&
+				   [request[1] isKindOfClass:[NSString class]] &&
+				   [request[0] isEqualToString:@"response"]) {
+			[self.delegate receivedArrayDataWithType:request[1] data:request[2] fromSender:sender];
 		} else {
 			NSLog(@"Malformed request");
 		}
@@ -90,11 +96,17 @@
 }
 
 - (void)setAutoResponseWithType:(NSString *)type response:(NSArray *)response {
-	
+	NSArray *responseData = @[type, response];
+	[self clearAutoResponseWithType:type];
+	[self.autoResponses addObject:responseData];
 }
 
 - (void)clearAutoResponseWithType:(NSString *)type {
-	
+	for (NSArray *dataArray in self.autoResponses){
+		if ([type isEqualToString:dataArray[0]]) {
+			[self.autoResponses removeObject:dataArray];
+		}
+	}
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CarrierPigeon.h"
+#import "CarrierPigeonEmulator.h"
 
 @protocol PigeonHouseDelegate <NSObject>
 
@@ -18,7 +18,7 @@
 
 @end
 
-@interface PigeonHouse : NSObject<CarrierPigeonDelegate>
+@interface PigeonHouse : NSObject<CarrierPigeonEmulatorDelegate>
 
 @property (nonatomic, assign) id <PigeonHouseDelegate> delegate;
 

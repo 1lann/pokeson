@@ -33,8 +33,8 @@
 	// Do any additional setup after loading the view.
     self.pigeonHouse = [[PigeonHouse alloc] init];
     self.pigeonHouse.delegate = self;
-#warning TODO: Change this later
-    [self.pigeonHouse connectToNetworkWithName:@"Chuie" visible:YES];
+	[self.pigeonHouse setAutoResponseWithType:@"list" response:@[@"Test",@"Jason",@"Test monster",@"MissingNO."]];
+    [self.pigeonHouse connectToNetworkWithName:@"Me" visible:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,11 +85,7 @@
 }
 
 - (void)receivedRequestWithType:(NSString *)type fromSender:(NSString *)sender {
-#warning Not implemented correctly. TODO
-    if ([type isEqualToString:@"list"]) {
-        NSArray* array = @[@"Test",@"Josh",@"Test monster",@"MissingNO."];
-        [self.pigeonHouse respondWithData:array type:type targetName:sender];
-    }
+
 }
 
 - (void)networkError:(NSError *)error {
