@@ -20,6 +20,7 @@
 		2AF1394F18E92AB4009280BC /* ResearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1394E18E92AB4009280BC /* ResearchManager.m */; };
 		2AF1395218E92AC0009280BC /* Research.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1395118E92AC0009280BC /* Research.m */; };
 		2AF1395518E92AE2009280BC /* DayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF1395418E92AE2009280BC /* DayManager.m */; };
+		9622FFDA190101D8005A714B /* PokesonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9622FFD9190101D8005A714B /* PokesonInfoViewController.m */; };
 		96369A7218D52C3E00CD66EC /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = 96369A7118D52C3E00CD66EC /* Building.m */; };
 		96369A7518D52C6800CD66EC /* Town.m in Sources */ = {isa = PBXBuildFile; fileRef = 96369A7418D52C6800CD66EC /* Town.m */; };
 		9650C6B818E8500A00927D80 /* PokesonPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9650C6B718E8500A00927D80 /* PokesonPickerViewController.m */; };
@@ -81,6 +82,8 @@
 		2AF1395118E92AC0009280BC /* Research.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Research.m; sourceTree = "<group>"; };
 		2AF1395318E92AE2009280BC /* DayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayManager.h; sourceTree = "<group>"; };
 		2AF1395418E92AE2009280BC /* DayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayManager.m; sourceTree = "<group>"; };
+		9622FFD8190101D8005A714B /* PokesonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokesonInfoViewController.h; sourceTree = "<group>"; };
+		9622FFD9190101D8005A714B /* PokesonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokesonInfoViewController.m; sourceTree = "<group>"; };
 		96369A7018D52C3E00CD66EC /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
 		96369A7118D52C3E00CD66EC /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
 		96369A7318D52C6800CD66EC /* Town.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Town.h; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				96BC46F318CC5ACA003119ED /* PokesonAppDelegate.m */,
 				96BC471B18CC5C13003119ED /* MultiProgressView.h */,
 				96BC471C18CC5C13003119ED /* MultiProgressView.m */,
+				9622FFD8190101D8005A714B /* PokesonInfoViewController.h */,
+				9622FFD9190101D8005A714B /* PokesonInfoViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				2AF1393718E92696009280BC /* Player.m in Sources */,
 				96BC46F018CC5ACA003119ED /* main.m in Sources */,
 				2AF1394018E927BF009280BC /* DiseaseManager.m in Sources */,
+				9622FFDA190101D8005A714B /* PokesonInfoViewController.m in Sources */,
 				2AF1394F18E92AB4009280BC /* ResearchManager.m in Sources */,
 				2AF1394C18E92AA1009280BC /* Disease.m in Sources */,
 				96BC46FD18CC5ACA003119ED /* PokesonViewController.m in Sources */,

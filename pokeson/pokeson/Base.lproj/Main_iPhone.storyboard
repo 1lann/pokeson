@@ -112,9 +112,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="105" height="105"/>
-                                        <connections>
-                                            <segue destination="pMz-tm-bDd" kind="modal" id="np9-B3-lq8"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -136,33 +133,18 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="pickerView" destination="wNJ-rT-Raj" id="RTS-D2-c2H"/>
+                        <segue destination="BXu-ty-shA" kind="push" identifier="selectedPokeson" id="bhv-0S-jp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Df9-k2-weF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N4k-9Q-eTg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="723" y="-661"/>
+            <point key="canvasLocation" x="785" y="-661"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="nmd-Uh-8x0">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="pMz-tm-bDd" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Srs-9Y-IOC">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BXu-ty-shA" kind="relationship" relationship="rootViewController" id="Rba-Qi-Jdl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p6E-0o-pCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1173" y="-661"/>
-        </scene>
-        <!--View Controller - Pokeson Name-->
+        <!--Pokeson Info View Controller - Pokeson Name-->
         <scene sceneID="6UN-MJ-FyI">
             <objects>
-                <viewController id="ri0-Vy-leB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PokesonInfoView" id="ri0-Vy-leB" customClass="PokesonInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LF7-Ja-vWk"/>
                         <viewControllerLayoutGuide type="bottom" id="doS-sa-JZ6"/>
@@ -217,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9m-uN-eu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2056" y="-661"/>
+            <point key="canvasLocation" x="2238" y="-1069"/>
         </scene>
         <!--View Controller - Item 1-->
         <scene sceneID="fma-xU-hs8">
@@ -382,11 +364,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="ri0-Vy-leB" kind="relationship" relationship="viewControllers" id="jv1-vV-G3d"/>
+                        <segue destination="Sct-nK-sWy" kind="relationship" relationship="viewControllers" id="K26-3e-fKl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cla-jE-k7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="-661"/>
+            <point key="canvasLocation" x="1481" y="-661"/>
+        </scene>
+        <!--View Controller - Item-->
+        <scene sceneID="2JB-cp-iXy">
+            <objects>
+                <viewController id="Sct-nK-sWy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aXX-Jg-bBZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="m6I-lb-SGr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7PB-HR-UBl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Hdq-za-12z"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sqo-zp-5GH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2154" y="-78"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

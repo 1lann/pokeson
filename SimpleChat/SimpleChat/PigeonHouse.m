@@ -41,11 +41,6 @@
 }
 
 - (BOOL)requestDataWithType:(NSString *)type targetName:(NSString*)targetName {
-	// TODO: currently dummy code
-//	if ([type isEqualToString:@"list"]) {
-//		[self.delegate receivedArrayDataWithType:@"list" data:@[@"Chuie",@"Ben",@"Hector",@"Pizz"] fromSender:targetName];
-//	}
-//	return YES;
 	NSMutableArray* request = [[NSMutableArray alloc] init];
 	[request addObject:@"request"];
 	[request addObject:type];

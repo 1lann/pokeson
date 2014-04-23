@@ -86,7 +86,7 @@
 	
 }
 
--(void) viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
         self.pigeonHouse.delegate = self.previousDelegate;
         [self callbackFunc];

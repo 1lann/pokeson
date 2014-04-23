@@ -24,7 +24,9 @@
 	self.visible = visible;
 	self.peerNames = [[NSMutableArray alloc] init];
 	[self.peerNames addObject:@"Demo"];
-	[self.peerNames addObject:self.name];
+	if (self.visible) {
+		[self.peerNames addObject:self.name];
+	}
 	[self.delegate networkChange:[self.peerNames copy]];
 }
 
@@ -34,7 +36,7 @@
 }
 
 - (BOOL)sendData:(NSData *)data targetName:(NSString *)targetName {
-	if ([targetName isEqualToString:self.name]) {
+	if ([targetName isEqualToString:self.name] && self.visible) {
 		[self.delegate didReceiveData:data fromSender:self.name];
 		return YES;
 	} else if ([targetName isEqualToString:@"Demo"]) {

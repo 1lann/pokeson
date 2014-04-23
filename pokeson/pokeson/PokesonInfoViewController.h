@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokeson.h"
 
 @interface PokesonInfoViewController : UIViewController
+
+@property Pokeson* pokeson;
 
 @end

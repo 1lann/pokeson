@@ -12,6 +12,7 @@
 @interface PokesonPickerViewController ()
 
 @property PokesonManager* pokesonManager;
+@property Pokeson* pokesonToBePassed;
 
 @end
 
@@ -71,6 +72,20 @@
 	[cell.contentView addSubview:bgView];
     [cell.contentView addSubview:label];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	self.pokesonToBePassed = [self.pokesonManager.allPokesons objectAtIndex:indexPath.item];
+	 [self performSegueWithIdentifier:@"selectedPokeson" sender:self ];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if([[segue identifier] isEqualToString:@"selectedPokeson"]){
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+		PokesonInfoViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"PokesonInfoView"];
+		vc.pokeson = self.pokesonToBePassed;
+		vc.pokeson.name = @"Test";
+	}
 }
 
 @end

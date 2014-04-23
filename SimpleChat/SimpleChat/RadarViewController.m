@@ -33,8 +33,8 @@
 	// Do any additional setup after loading the view.
     self.pigeonHouse = [[PigeonHouse alloc] init];
     self.pigeonHouse.delegate = self;
+	[self.pigeonHouse connectToNetworkWithName:@"Me" visible:YES];
 	[self.pigeonHouse setAutoResponseWithType:@"list" response:@[@"Test",@"Jason",@"Test monster",@"MissingNO."]];
-    [self.pigeonHouse connectToNetworkWithName:@"Me" visible:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,7 +89,7 @@
 }
 
 - (void)networkError:(NSError *)error {
-    
+    NSLog(error);
 }
 
 @end
