@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dC4-h1-u5c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dC4-h1-u5c">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -124,9 +124,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Manage Pokesons" id="FLM-Jo-Jmz">
                         <barButtonItem key="backBarButtonItem" title="Done" id="shZ-Xb-GOU"/>
+                        <barButtonItem key="leftBarButtonItem" title="Breed" id="DlI-BN-ZbS">
+                            <connections>
+                                <action selector="breedButtonPressed:" destination="NNj-9W-9tm" id="Qdw-sW-ESa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ISn-N6-r1U">
                             <connections>
-                                <segue destination="N4k-9Q-eTg" kind="unwind" unwindAction="unwindFromPokesonPicker:" id="b0T-Uy-dvZ"/>
+                                <action selector="doneButtonPressed:" destination="NNj-9W-9tm" id="CTM-Zr-3MM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -134,12 +139,13 @@
                     <connections>
                         <outlet property="pickerView" destination="wNJ-rT-Raj" id="RTS-D2-c2H"/>
                         <segue destination="BXu-ty-shA" kind="push" identifier="selectedPokeson" id="bhv-0S-jp4"/>
+                        <segue destination="N4k-9Q-eTg" kind="unwind" identifier="unwindFromPokesonPicker" unwindAction="unwindFromPokesonPicker:" id="Ti5-ms-567"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Df9-k2-weF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="N4k-9Q-eTg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="785" y="-661"/>
+            <point key="canvasLocation" x="811" y="-676"/>
         </scene>
         <!--Pokeson Info View Controller - Pokeson Name-->
         <scene sceneID="6UN-MJ-FyI">

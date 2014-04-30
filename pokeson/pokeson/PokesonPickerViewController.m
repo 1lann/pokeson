@@ -13,6 +13,14 @@
 
 @property PokesonManager* pokesonManager;
 @property Pokeson* pokesonToBePassed;
+@property Pokeson* selectedPokeson1;
+@property Pokeson* selectedPokeson2;
+@property Pokeson* justSelectedPokeson;
+@property Pokeson* justUnselectedPokeson;
+@property id titleView;
+@property id leftView;
+@property id rightView;
+@property BOOL selectionActive;
 
 @end
 
@@ -40,6 +48,13 @@
 	[self.pokesonManager newPokesonWithName:@"Nandos" color:[UIColor redColor]];
 	[self.pokesonManager newPokesonWithName:@"Wood" color:[UIColor brownColor]];
 	[self.pokesonManager newPokesonWithName:@"Grass" color:[UIColor greenColor]];
+	
+	NSLog(@"Loaded");
+	self.titleView = [[self.navigationController.navigationBar subviews] objectAtIndex:1];
+	self.leftView = [[self.navigationController.navigationBar subviews] objectAtIndex:2];
+	self.rightView = [[self.navigationController.navigationBar subviews] objectAtIndex:3];
+	
+	self.selectionActive = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,15 +86,63 @@
 	[label setText:name];
 	[cell.contentView addSubview:bgView];
     [cell.contentView addSubview:label];
-    [bgView.layer setBorderWidth:1.0];
-    [bgView.layer setBorderColor:[[UIColor colorWithRed:0.10 green:0.45 blue:0.73 alpha:1.0] CGColor]];
+	if (self.selectedPokeson1 == pokeson || self.selectedPokeson2 == pokeson) {
+		if (self.justSelectedPokeson == pokeson) {
+		[bgView.layer setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]CGColor]];
+		bgView.layer.borderWidth = 0.0;
+		CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
+		fadeAnim.fromValue = [NSNumber numberWithFloat:0.0];
+		fadeAnim.toValue = [NSNumber numberWithFloat:6.0];
+		fadeAnim.duration = 0.1;
+		[bgView.layer addAnimation:fadeAnim forKey:@"borderWidth"];
+		bgView.layer.borderWidth = 6.0;
+		} else {
+			[bgView.layer setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]CGColor]];
+			bgView.layer.borderWidth = 6.0;
+		}
+	} else if (self.justUnselectedPokeson == pokeson) {
+		self.justUnselectedPokeson = NULL;
+		[bgView.layer setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]CGColor]];
+		bgView.layer.borderWidth = 6.0;
+		CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
+		fadeAnim.fromValue = [NSNumber numberWithFloat:6.0];
+		fadeAnim.toValue = [NSNumber numberWithFloat:0.0];
+		fadeAnim.duration = 0.1;
+		[bgView.layer addAnimation:fadeAnim forKey:@"borderWidth"];
+		bgView.layer.borderWidth = 0.0;
+	}
     return cell;
 }
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-	self.pokesonToBePassed = [self.pokesonManager.allPokesons objectAtIndex:indexPath.item];
-	 [self performSegueWithIdentifier:@"selectedPokeson" sender:self ];
+	if (!self.selectionActive) {
+		self.pokesonToBePassed = [self.pokesonManager.allPokesons objectAtIndex:indexPath.item];
+		[self performSegueWithIdentifier:@"selectedPokeson" sender:self ];
+	} else {
+		Pokeson* tappedPokeson = [self.pokesonManager.allPokesons objectAtIndex:indexPath.row];
+		self.justSelectedPokeson = tappedPokeson;
+		if (self.selectedPokeson1) {
+			if (self.selectedPokeson1 == tappedPokeson) {
+				self.justUnselectedPokeson = self.selectedPokeson1;
+				if (self.selectedPokeson2) {
+					self.selectedPokeson1 = self.selectedPokeson2;
+					self.selectedPokeson2 = NULL;
+				} else {
+					self.selectedPokeson1 = NULL;
+				}
+			} else if (self.selectedPokeson2 == tappedPokeson) {
+				self.justUnselectedPokeson = self.selectedPokeson2;
+				self.selectedPokeson2 = NULL;
+			} else {
+				self.justUnselectedPokeson = self.selectedPokeson2;
+				self.selectedPokeson2 = tappedPokeson;
+			}
+		} else {
+			self.selectedPokeson1 = tappedPokeson;
+		}
+		[self.pickerView reloadData];
+	}
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -89,4 +152,56 @@
 	}
 }
 
+- (IBAction)breedButtonPressed:(UIBarButtonItem *)sender {
+	if (!self.selectionActive) {
+		self.selectionActive = YES;
+		[UIView animateWithDuration:0.3 animations:^{
+			self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+			[self.titleView setAlpha:0];
+			[self.leftView setAlpha:0];
+			[self.rightView setAlpha:0];
+			[self.rightView setTitle:@"Breed"];
+			[self.leftView setTitle:@"Cancel"];
+		} completion:^(BOOL finished){
+			self.navigationController.topViewController.title = @"Select Pokesons";
+			[UIView animateWithDuration:0.2 animations:^{
+				[self.titleView setAlpha:1];
+				[self.leftView setAlpha:1];
+				[self.rightView setAlpha:1];
+			}];
+		}
+		 ];
+	} else {
+		self.selectionActive = NO;
+		self.selectedPokeson1 = NULL;
+		self.selectedPokeson2 = NULL;
+		[self.pickerView reloadData];
+		[UIView animateWithDuration:0.3 animations:^{
+			[self.rightView setTitle:@"Done"];
+			[self.leftView setTitle:@"Breed"];
+			self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+			[self.titleView setAlpha:0];
+			[self.leftView setAlpha:0];
+			[self.rightView setAlpha:0];
+		} completion:^(BOOL finished){
+			self.navigationController.topViewController.title = @"Manage Pokesons";
+			[UIView animateWithDuration:0.2 animations:^{
+				[self.titleView setAlpha:1];
+				[self.leftView setAlpha:1];
+				[self.rightView setAlpha:1];
+			}];
+		}
+		 ];
+
+	}
+}
+
+- (IBAction)doneButtonPressed:(UIBarButtonItem *)sender {
+	if (!self.selectionActive) {
+		[self performSegueWithIdentifier:@"unwindFromPokesonPicker" sender:self];
+	} else {
+		
+	}
+}
+	 
 @end

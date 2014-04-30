@@ -13,5 +13,7 @@
 @interface PokesonPickerViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *pickerView;
+- (IBAction)breedButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)doneButtonPressed:(UIBarButtonItem *)sender;
 
 @end
