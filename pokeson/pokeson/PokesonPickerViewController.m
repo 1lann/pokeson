@@ -71,8 +71,11 @@
 	[label setText:name];
 	[cell.contentView addSubview:bgView];
     [cell.contentView addSubview:label];
+    [bgView.layer setBorderWidth:1.0];
+    [bgView.layer setBorderColor:[[UIColor colorWithRed:0.10 green:0.45 blue:0.73 alpha:1.0] CGColor]];
     return cell;
 }
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	self.pokesonToBePassed = [self.pokesonManager.allPokesons objectAtIndex:indexPath.item];
@@ -81,10 +84,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if([[segue identifier] isEqualToString:@"selectedPokeson"]){
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-		PokesonInfoViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"PokesonInfoView"];
+		PokesonInfoViewController* vc = [[[segue destinationViewController] viewControllers] objectAtIndex:0];
 		vc.pokeson = self.pokesonToBePassed;
-		vc.pokeson.name = @"Test";
 	}
 }
 
